@@ -1,0 +1,118 @@
+.slide-cart-items ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slide-cart-items ul > li {
+  margin-bottom: 15px;
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slide-cart-items .cart-item-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 20%;
+  flex: 1 0 20%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slide-cart-items .cart-item-content {
+  position: relative;
+  -webkit-box-flex: 1;
+  -gi-flex: 1 0 70%;
+  -ms-flex: 1 0 70%;
+  flex: 1 0 70%;
+  padding-left: 15px;
+  overflow: hidden;
+}
+
+.slide-cart-items .cart-item-title {
+  width: 90%;
+  padding-right: 30px;
+  text-decoration: none;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.slide-cart-items .cart-item-price {
+  margin-top: 5px;
+  font-size: 13px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.cart-item-price span {
+  color: #777;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.qty-plus-minus {
+  border: 1px solid #eeeeee;
+  height: 35px;
+  overflow: hidden;
+  position: relative;
+  width: 92px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.qty-plus-minus input.qty-input {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #777;
+  float: left;
+  font-size: 14px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 32px;
+  outline: none;
+  font-weight: 400;
+  line-height: 35px;
+}
+
+.cart-item-content .remove {
+  line-height: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 0 0 10px;
+  color: red;
+  font-size: 22px;
+}
