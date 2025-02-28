@@ -4,7 +4,7 @@ import SlideOverlay from './SlideOverlay';
 
 export const Icon = ({ name, className, style }) => {
   return (
-    <span className={`material-symbols-outlined ${className}`} style={style}>
+    <span className={`material-symbols-outlined ${className ? className : ''}`} style={style}>
       {name}
     </span>
   );

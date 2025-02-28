@@ -19,7 +19,7 @@ const SlideOverlay = ({ isSlideActive, setIsSlideActive }) => {
             <div className="cart-title-wrapper">
               <div className="cart-title">My Cart</div>
               <span onClick={() => setIsSlideActive(!isSlideActive)}>
-                <Icon name="close" style={{ cursor: 'pointer' }} />
+                <Icon name="close" className="cart-close"  />
               </span>
             </div>
             <div className="slide-cart-items">{listItems}</div>

@@ -56,6 +56,14 @@
   margin: 10px;
 }
 
+.cart-close{
+    cursor: pointer;
+    position: relative;
+    border: 0;
+    font-size: 22px;
+    line-height: 20px;
+    color: #4b5966;
+}
 
 .cart-bottom .cart-sub-total {
   display: -webkit-box;
