@@ -6,7 +6,7 @@
   font-style: normal;
   line-height: 1.5;
   color-scheme: light dark;
-
+  color: #4b5966;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -40,6 +40,15 @@ button {
   cursor: pointer;
   background-color: transparent;
   transition: border-color 0.25s;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none
 }
 
 @media (prefers-color-scheme: light) {

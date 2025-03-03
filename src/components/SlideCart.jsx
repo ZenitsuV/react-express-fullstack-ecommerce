@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './SlideOverlay.css';
+import './SlideCart.css';
 import { Icon } from './Header';
 import SlideCartProductList from './SlideCartProductList';
 
-const SlideOverlay = ({ isSlideActive, setIsSlideActive }) => {
+const SlideCart = ({ isSlideCartActive, setIsSlideCartActive }) => {
   const listItems = [];
 
   for (let i = 0; i < 10; i++) {
@@ -12,13 +12,13 @@ const SlideOverlay = ({ isSlideActive, setIsSlideActive }) => {
 
   return (
     <>
-      <div className={`overlay ${isSlideActive ? 'active' : ''}`}></div>
-      <div className={`container ${isSlideActive ? 'active' : ''}`}>
-        <div className="cart-wrapper">
+      <div className={`overlay ${isSlideCartActive ? 'active' : ''}`}></div>
+      <div className={`slide-container ${isSlideCartActive ? 'active' : ''}`}>
+        <div className="slide-cart-wrapper">
           <div className="cart-top">
             <div className="cart-title-wrapper">
               <div className="cart-title">My Cart</div>
-              <span onClick={() => setIsSlideActive(!isSlideActive)}>
+              <span onClick={() => setIsSlideCartActive(!isSlideCartActive)}>
                 <Icon name="close" className="cart-close"  />
               </span>
             </div>
@@ -58,4 +58,4 @@ const SlideOverlay = ({ isSlideActive, setIsSlideActive }) => {
   );
 };
 
-export default SlideOverlay;
+export default SlideCart;

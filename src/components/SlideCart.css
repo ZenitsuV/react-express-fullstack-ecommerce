@@ -1,4 +1,5 @@
-.container {
+
+.slide-container {
   position: fixed;
   display: block;
   top: 0;
@@ -16,13 +17,13 @@
   opacity: 0;
 }
 
-.container.active {
+.slide-container.active {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   opacity: 1;
 }
 
-.container .cart-wrapper {
+.slide-cart-wrapper {
   gap: 10px;
   margin: 10px;
   position: relative;
@@ -40,13 +41,13 @@
   justify-content: space-between;
 }
 
-.cart-wrapper .cart-title-wrapper {
+.slide-cart-wrapper .cart-title-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.cart-wrapper .cart-title-wrapper .cart-title {
+.slide-cart-wrapper .cart-title-wrapper .cart-title {
   font-size: 15px;
   color: #4b5966;
   font-weight: 600;
