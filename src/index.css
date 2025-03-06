@@ -51,6 +51,16 @@ ul li {
   list-style: none
 }
 
+section {
+  position: relative;
+  background-color: #fff;
+  --webkit-transition: all 0.5sease;
+  transition: all 0.5sease;
+  transition: all 0.5sease;
+}
+
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

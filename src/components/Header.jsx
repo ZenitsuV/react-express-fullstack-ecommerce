@@ -123,7 +123,7 @@ const Header = () => {
       </div>
      
      {/* only mobile - header bottom */}
-      <div className='row'>
+      <div className='header-bottom-row'>
         <div className="header-bottom-search" style={{width:'80%'}}>
           <form className="header-bottom-form">
             <input
@@ -137,7 +137,7 @@ const Header = () => {
           </form>
         </div>
       </div>
-      
+
      {/* Side Cart */}
       <SlideCart isSlideCartActive={isSlideCartActive} setIsSlideCartActive={setIsSlideCartActive}/>   
     {/* Only mobile - Side Menu */}
