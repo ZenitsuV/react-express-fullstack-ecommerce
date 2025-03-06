@@ -1,7 +1,7 @@
-import './CategorySwiper.css';
+import './Swiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Icon } from './Header';
+import ProductCard from '../product/ProductCard';
 
  const widthObj = {
      414 : '1',
@@ -67,24 +67,17 @@ const slides = [
   },
 ];
 
-const CategorySwiper = () => {
+const Swiper = () => {
   console.log(window.innerWidth);
   return (
     <>
       <div className="wrapper">
         <div className="splide">
-          <Splide options={options} aria-label="My Favorite Images">
+          <Splide options={options} aria-label="Slide Items">
             {slides.map((slide) => (
               <SplideSlide>
                 <div className="slide">
-                  <div className="card" style={{backgroundColor:slide.bgcolor}}>
-                    <Icon name={slide.icon} className="cat-icon" />
-                    <div className='card-item'>
-                      <span className='card-item-title'>{slide.text}</span>
-                      <span className='card-item-count'>{slide.totalCount} Items</span>
-                    </div>
-                  
-                  </div>
+                  <ProductCard />
                 </div>
               </SplideSlide>
             ))}
@@ -95,4 +88,4 @@ const CategorySwiper = () => {
   );
 };
 
-export default CategorySwiper;
+export default Swiper;

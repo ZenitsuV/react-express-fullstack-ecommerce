@@ -1,0 +1,110 @@
+
+/* deal section */
+
+ .deal-section {
+    width:100%;
+  }
+  
+  .deal-title-wrapper {
+      margin-bottom: 20px;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+  }
+  
+  .deal-section .deal-title h2 {
+      margin-bottom: 0;
+      font-size: 25px;
+      line-height: 38px;
+      font-weight: 600;
+      color: #4b5966;
+      position: relative;
+      display: inline;
+      padding: 0;
+      text-transform: capitalize;
+      line-height: 1;
+      font-family: "Manrope", sans-serif;
+  }
+  
+  .deal-section .deal-title p {
+      max-width: 400px;
+      margin: 10px 0 0 0;
+      font-size: 14px;
+      color: #777;
+      line-height: 18px;
+  }
+
+  
+  /* deal end timer */
+  
+  #deal-timer {
+    padding: 0;
+  }
+  
+  .deal-timer{
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .deal-timer .deal-timer {
+    background-color: #f8f8fb;
+    border-radius: 5px;
+  }
+  
+  .time-block {
+      margin-left: 10px;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 28px;
+      color: #4b5966;
+  }
+  
+  .time {
+    min-width: 20px;
+    position: relative;
+  }
+  
+  .day {
+    margin-left: 5px;
+      position: relative;
+      font-size: 14px;
+      font-weight: 400;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      line-height: 28px;
+      color: #4b5966;
+  }
+  
+  .dots {
+      margin-top: -1px;
+      margin-left: 5px;
+      color: #4b5966;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .deal-title-wrapper {
+      flex-direction: column;
+    }
+  }

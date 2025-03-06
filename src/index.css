@@ -29,6 +29,10 @@ h1 {
   line-height: 1.1;
 }
 
+h6 {
+  margin: 0;
+}
+
 button {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

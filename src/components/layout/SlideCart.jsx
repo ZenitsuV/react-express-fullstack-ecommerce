@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './SlideCart.css';
-import { Icon } from './Header';
+import { Icon } from '../common/Utilities';
 import SlideCartProductList from './SlideCartProductList';
 
 const SlideCart = ({ isSlideCartActive, setIsSlideCartActive }) => {
+ 
   const listItems = [];
-
   for (let i = 0; i < 10; i++) {
     listItems.push(<SlideCartProductList />);
   }

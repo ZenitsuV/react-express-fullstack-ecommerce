@@ -1,7 +1,7 @@
-import './Swiper.css';
+import './CategorySwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Icon } from './Header';
+import { Icon } from '../common/Utilities';
 
  const widthObj = {
      414 : '1',
@@ -67,7 +67,7 @@ const slides = [
   },
 ];
 
-const Swiper = ({slides, children}) => {
+const CategorySwiper = () => {
   console.log(window.innerWidth);
   return (
     <>
@@ -95,4 +95,4 @@ const Swiper = ({slides, children}) => {
   );
 };
 
-export default Swiper;
+export default CategorySwiper;

@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import SlideCart from './SlideCart';
 import SlideNav from './SlideNav';
-
-export const Icon = ({ name, className, style }) => {
-  return (
-    <span className={`material-symbols-outlined ${className ? className : ''}`} style={style}>
-      {name}
-    </span>
-  );
-};
+import { Icon } from '../common/Utilities';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
