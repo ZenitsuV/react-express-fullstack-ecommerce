@@ -7,7 +7,7 @@ const SlideCart = ({ isSlideCartActive, setIsSlideCartActive }) => {
  
   const listItems = [];
   for (let i = 0; i < 10; i++) {
-    listItems.push(<SlideCartProductList />);
+    listItems.push(<SlideCartProductList key={i}/>);
   }
 
   return (

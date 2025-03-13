@@ -1,16 +1,27 @@
 import { useState } from 'react';
 import './App.css';
+import {Icon} from './components/common/Utilities'
 import Header from './components/layout/Header';
 import CategorySwiper from './components/layout/CategorySwiper';
 import DealsSection from './components/layout/DealsSection';
+import Banner from './components/common/Banner';
+import NewArrivalsSection from './components/layout/NewArrivalsSection';
+import ServiceSection from './components/layout/ServiceSection';
+import Footer from './components/layout/Footer';
 
 function App() {
+
+
   return (
     <>
       <Header />
       <CategorySwiper/>
       <DealsSection/>
- 
+      <Banner bannerType='Large'/> 
+      <NewArrivalsSection />
+      <Banner bannerType='Small' />
+      <ServiceSection />
+      <Footer />
     </>
   );
 }

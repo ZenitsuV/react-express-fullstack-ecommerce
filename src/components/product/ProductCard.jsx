@@ -1,10 +1,11 @@
 import React from 'react';
 import { Icon } from '../common/Utilities';
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
+ // console.log(product);
     return (
         <>       
-        <div className='product-card'>
+        <div className='product-card' >
          <div className='product-inner'>
           <div className='pro-image-outer'>
             <div className="pro-image">
@@ -29,11 +30,19 @@ const ProductCard = () => {
                   <Icon name="star" className='fill' style={{fontSize:'22px'}} />
                   <Icon name="star" className='fill' style={{fontSize:'22px'}} />
                 </span>
-                <span className='qty'></span>
+                <span className='qty'>1kg</span>
               </span>
               <span className='pro-price'>
-                <span className='new-price'>$45.00</span>
-                <span className='old-price'>$56.00</span>
+                <div className='price-span'>
+                  <span className='new-price'>$45.00</span>
+                  <span className='old-price'>$56.00</span>
+                </div>
+                <div className='add-cart'>
+                    <a className="btn-1 add-cart" href="/">
+                     Add
+                   </a>
+                </div>
+                
               </span>
             </div>
           </div>

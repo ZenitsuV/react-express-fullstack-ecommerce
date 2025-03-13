@@ -11,15 +11,18 @@ const Header = () => {
 
   return (
     <>
-      <div className="header">
-        <div className="header-logo">
-          <a>
-            <img
-              style={{ width: '110px', backgroundSize: 'contain' }}
-              src="https://grabit-react-next.maraviyainfotech.com/assets/img/logo/logo.png"
-            />
-          </a>
-        </div>
+     <header className='header-section'>
+       <div className='container' style={{flexDirection:'column'}}>
+       <div className="header">
+          <div className="header-logo">
+            <a>
+              <img
+                style={{ width: '110px', backgroundSize: 'contain' }}
+                src="https://grabit-react-next.maraviyainfotech.com/assets/img/logo/logo.png"
+              />
+            </a>
+          </div>
+
         <div className="header-search" style={{width:'33%'}}>
           <form className="header-form">
             <input
@@ -116,26 +119,31 @@ const Header = () => {
       </div>
      
      {/* only mobile - header bottom */}
+     <section className='header-bottom-section'>
       <div className='header-bottom-row'>
-        <div className="header-bottom-search" style={{width:'80%'}}>
-          <form className="header-bottom-form">
-            <input
-              type="text"
-              className="input"
-              placeholder="Search Products..."
-            />
-            <button type="submit" className="btn">
-              <Icon name="search" className="search" />
-            </button>
-          </form>
+          <div className="header-bottom-search" style={{width:'80%'}}>
+            <form className="header-bottom-form">
+              <input
+                type="text"
+                className="input"
+                placeholder="Search Products..."
+              />
+              <button type="submit" className="btn">
+                <Icon name="search" className="search" />
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-
-     {/* Side Cart */}
-      <SlideCart isSlideCartActive={isSlideCartActive} setIsSlideCartActive={setIsSlideCartActive}/>   
-    {/* Only mobile - Side Menu */}
-      <SlideNav isSlideMenuActive={isSlideMenuActive} setIsSlideMenuActive={setIsSlideMenuActive}/>
-    
+     </section>
+ 
+      {/* Side Cart */}
+        <SlideCart isSlideCartActive={isSlideCartActive} setIsSlideCartActive={setIsSlideCartActive}/>   
+      {/* Only mobile - Side Menu */}
+        <SlideNav isSlideMenuActive={isSlideMenuActive} setIsSlideMenuActive={setIsSlideMenuActive}/>
+      
+       </div>    
+     </header>
+ 
     </>
   );
 };

@@ -21,7 +21,8 @@ a {
 
 body {
   margin: 0;
-  background-color: #f7f4f3;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 h1 {

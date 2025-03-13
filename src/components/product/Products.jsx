@@ -1,20 +1,23 @@
 import React from 'react';
 import './Products.css';
 import ProductCard from './ProductCard';
-import Swiper from '../common/Swiper';
+import ProductSwiper from '../layout/ProductSwiper';
+import products from '/public/products'
 
-const Products = () => {
+const Products = ({isSwiperNeeded, category}) => {
+ 
+   
+  const productItems = products.map((product) => (
+    <ProductCard product={product} key={product.id}/>
+  )).slice(0,12);
 
-const listItems = [];
-for (let i = 0; i < 6; i++) {
-    listItems.push(<ProductCard />);
-}
+  const flexWrapClass = isSwiperNeeded ? 'flex-no-wrap' : 'flex-wrap';
 
     return (
      <>
      <div className='products-section'>
-         <div className='products-wrapper'>
-         <Swiper/>
+         <div className={`products-wrapper ${flexWrapClass}`}>
+            {isSwiperNeeded ? <ProductSwiper products={products} /> : productItems}     
         </div>
     </div>
      </>

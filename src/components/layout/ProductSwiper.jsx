@@ -1,7 +1,9 @@
-import './Swiper.css';
+import { useId } from 'react';
+import './ProductSwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import products from '/public/products'
+import ProductCard from '../product/ProductCard';
+//import products from '/public/products'
 
  const widthObj = {
      414 : '1',
@@ -23,19 +25,19 @@ const options = {
 };
 
 
-const arr = Array.from({length:products.length}).map((_,index) => index);
+const ProductSwiper = ({products}) => {
+  const id = useId();
+  //const arr = Array.from({length:products.length}).map((_,index) => index);
 
-const Swiper = ({component, children}) => {
-  console.log(window.innerWidth);
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper" >
         <div className="splide">
           <Splide options={options} aria-label="Slide Items">
-            {arr.map((product) => (
-              <SplideSlide>
-                <div className="slide">
-                  {component}
+            {products.map((product) => (
+              <SplideSlide key={product.id}>
+                <div className="slide" >
+                 <ProductCard product={product}/>
                 </div>
               </SplideSlide>
             ))}
@@ -46,4 +48,4 @@ const Swiper = ({component, children}) => {
   );
 };
 
-export default Swiper;
+export default ProductSwiper;

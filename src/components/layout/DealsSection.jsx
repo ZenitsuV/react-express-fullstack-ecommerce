@@ -7,8 +7,8 @@ const DealsSection = () => {
      <section className='deals-section'>    
         <div className='container'>
           <div className='deal-section'>
-            <div className='deal-title-wrapper'>
-              <div className='deal-title'>
+            <div className='section-head-wrapper'>
+              <div className='section-head-title'>
                 <h2>Day of the <span style={{color:'#8118d5'}}>Deal</span></h2>
                 <p>Don't wait. The time will never be just right.</p>
               </div>
@@ -32,7 +32,7 @@ const DealsSection = () => {
                 </div>
               </div>
             </div>
-            <Products />       
+            <Products isSwiperNeeded={true} />       
           </div>
       
         </div>

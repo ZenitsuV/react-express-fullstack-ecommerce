@@ -1,0 +1,103 @@
+.banner-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    height: 350px;
+}
+
+.banner{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.banner-detail {
+    height: 100%;
+    padding: 0px 50px 80px 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    text-align: right;
+    position: relative;
+}
+
+
+.banner-detail h2{
+    font-size: 50px;
+    font-weight: 700;
+    color: #4b5966;
+    line-height: 65px;
+    z-index: 2;
+    position: relative;
+}
+
+.banner-detail h3 {
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #5caf90;
+    font-weight: 600;
+    z-index: 2;
+    color: #8118d5;
+}
+
+.banner-detail h3 span{
+    font-weight: 400;
+    color: #777;
+}
+
+.banner-detail a {
+    margin-top: 15px;
+    padding: 5px 10px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 767px){
+    .banner-wrapper{
+        flex-wrap: wrap;
+    }
+     .banner {
+        height: 200px;
+     }
+
+     .banner-detail h2 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 0;
+     }
+
+     .banner-detail h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+     }
+
+     .banner-detail h2 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 0;
+     }
+
+     .banner-detail h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+     }
+
+}

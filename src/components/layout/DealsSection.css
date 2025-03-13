@@ -5,38 +5,6 @@
     width:100%;
   }
   
-  .deal-title-wrapper {
-      margin-bottom: 20px;
-      position: relative;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-  }
-  
-  .deal-section .deal-title h2 {
-      margin-bottom: 0;
-      font-size: 25px;
-      line-height: 38px;
-      font-weight: 600;
-      color: #4b5966;
-      position: relative;
-      display: inline;
-      padding: 0;
-      text-transform: capitalize;
-      line-height: 1;
-      font-family: "Manrope", sans-serif;
-  }
-  
-  .deal-section .deal-title p {
-      max-width: 400px;
-      margin: 10px 0 0 0;
-      font-size: 14px;
-      color: #777;
-      line-height: 18px;
-  }
 
   
   /* deal end timer */
@@ -104,7 +72,9 @@
   }
 
   @media only screen and (max-width: 767px) {
-    .deal-title-wrapper {
-      flex-direction: column;
-    }
+
+   .deal-timer {
+    margin-top: 8px;
+   }
+
   }
