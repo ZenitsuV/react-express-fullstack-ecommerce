@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SlideCartProductList.css';
+import ProductQtyForm from '../common/ProductQtyForm';
 
 const SlideCartProductList = () => {
   return (
@@ -16,29 +17,7 @@ const SlideCartProductList = () => {
             <span className="cart-item-price">
               <span>$45.00</span>
             </span>
-            <div className="qty-plus-minus">
-              <div
-                style={{
-                  cursor: 'pointer',
-                  backgroundColor: 'rgb(41, 149, 182)',
-                  padding: '10px',
-                  textAlign: 'center',
-                }}
-              >
-                -
-              </div>
-              <input type="text" value="1" className="qty-input" readonly />
-              <div
-                style={{
-                  cursor: 'pointer',
-                  backgroundColor: 'rgb(41, 149, 182)',
-                  padding: '10px',
-                  textAlign: 'center',
-                }}
-              >
-                +
-              </div>
-            </div>
+             <ProductQtyForm />  
             <a class="remove">×</a>
           </div>
         </li>

@@ -9,18 +9,24 @@ import NewArrivalsSection from './components/layout/NewArrivalsSection';
 import ServiceSection from './components/layout/ServiceSection';
 import Footer from './components/layout/Footer';
 
+import ProductDetails from './components/pages/ProductDetails';
+import Shop from './components/pages/Shop';
+
+
 function App() {
 
 
   return (
     <>
       <Header />
-      <CategorySwiper/>
+      {/* <CategorySwiper/>
       <DealsSection/>
       <Banner bannerType='Large'/> 
       <NewArrivalsSection />
       <Banner bannerType='Small' />
-      <ServiceSection />
+      <ServiceSection /> */}
+      {/* <ProductDetails /> */}
+      <Shop />
       <Footer />
     </>
   );

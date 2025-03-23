@@ -2,7 +2,7 @@ import './CategorySwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Icon } from '../common/Utilities';
-import products from '/public/products'
+import categories from '/public/category'
 
  const widthObj = {
      414 : '1',
@@ -32,14 +32,14 @@ const CategorySwiper = () => {
       <div className="container">
           <div className="splide">
             <Splide options={options} aria-label="My Favorite Images">
-              {products.map((product) => (
-                <SplideSlide key={product.id}>
+              {categories.map((category) => (
+                <SplideSlide key={category.id}>
                   <div className="category-slide">
-                    <div className="card" style={{backgroundColor:product.bgcolor}}>
-                      <Icon name={product.icon} className="cat-icon" />
+                    <div className="card" style={{backgroundColor:category.bgcolor}}>
+                      <Icon name={category.icon} className="cat-icon" />
                       <div className='card-item'>
-                        <span className='card-item-title'>{product.text}</span>
-                        <span className='card-item-count'>{product.totalCount} Items</span>
+                        <span className='card-item-title'>{category.text}</span>
+                        <span className='card-item-count'>{category.totalCount} Items</span>
                       </div>
                     
                     </div>

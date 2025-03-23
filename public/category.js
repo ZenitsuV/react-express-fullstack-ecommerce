@@ -1,5 +1,103 @@
 const category = [
-
+        {
+          id:'c1',
+          icon: 'nutrition',
+          name: 'Fruits',
+          totalCount: '312',
+          bgcolor: '#feeae3',        
+        },
+        {
+          id:'c2',
+          icon: 'grocery',
+          name: 'Vegetables',
+          totalCount: '65',
+          bgcolor: '#fef8d8',      
+        },
+        {
+          id:'c3',
+          icon: 'lunch_dining',
+          name: 'Snacks',
+          totalCount: '548',
+          bgcolor: '#feeae4',
+        },
+        {
+          id:'c4',
+          icon: 'cake',
+          name: 'Bakery',
+          totalCount: '48',
+          bgcolor: '#f0fedc',
+        },
+        {
+          id:'c5',
+          icon: 'coffee',
+          name: 'Drinks',
+          totalCount: '59',
+          bgcolor: '#feeae3',
+        },
+        {
+          id:'c6',
+          icon: 'fastfood',
+          name: 'Fast Food',
+          totalCount: '845',
+          bgcolor: '#def7ea',
+        },
+        {
+          id:'c7',
+          icon: 'local_cafe',
+          name: 'Dairy & Milk',
+          totalCount: '652',
+          bgcolor: '#f0fedc',
+        },
+        {
+          id:'c8',
+          icon: 'local_cafe',
+          name: 'Mini Snacks',
+          totalCount: '652',
+          bgcolor: '#f0fedc',
+        },
+        {
+          id:'c9',
+          icon: 'local_cafe',
+          name: 'Seafood',
+          totalCount: '652',
+          bgcolor: '#f0fedc',
+        },
+        {
+          id:'c10',
+          icon: 'local_cafe',
+          name: 'Soft Drinks',
+          totalCount: '652',
+          bgcolor: '#f0fedc',
+        },
+        {
+          id:'c11',
+          icon: 'local_cafe',
+          name: 'Spices',
+          totalCount: '652',
+          bgcolor: '#f0fedc',
+        },
+        {  
+        id:'c12',   
+        icon: 'local_cafe',
+        name: 'Duck Eggs',
+        totalCount: '652',
+        bgcolor: '#f0fedc',
+      },
+      {  
+        id:'c13', 
+        icon: 'local_cafe',
+        name: 'Dove Eggs',
+        totalCount: '652',
+        bgcolor: '#f0fedc',
+      },
+      {   
+        id:'c14',
+        icon: 'local_cafe',
+        name: 'Eggs',
+        totalCount: '652',
+        bgcolor: '#f0fedc',
+      },  
+     
 ];
 
 export default category;

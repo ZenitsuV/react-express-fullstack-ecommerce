@@ -7,3 +7,14 @@ export const Icon = ({ name, className, style }) => {
       </span>
     );
   };
+
+
+export const accordianHandler = (e) => {
+    e.target.classList.toggle("active");
+    var panel = e.target.nextElementSibling;
+    if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+    } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    }      
+} 

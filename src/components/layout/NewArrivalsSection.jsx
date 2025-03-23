@@ -3,7 +3,8 @@ import './NewArrivalsSection.css';
 import Products from '../product/Products';
 
 const NewArrivalsSection = () => {
-    const [category, setCategory] = useState("ALL");
+    const [category, setCategory] = useState("All");
+    console.log(category);
     return (
         <>
        <section className='products-section'>
@@ -16,10 +17,10 @@ const NewArrivalsSection = () => {
                 </div>   
               <div className='tab-list-wrapper'>
                 <ul className='tab-list' style={{display:'flex', flexDirection:'row',gap:'10px'}}>
-                  <li className='tab-list-item'><a className={`${category === "ALL" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>ALL</a></li>
-                  <li className='tab-list-item'><a className={`${category === "FRUITS" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>FRUITS</a></li>
-                  <li className='tab-list-item'><a className={`${category === "VEGETABLES" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>VEGETABLES</a></li>
-                  <li className='tab-list-item'><a className={`${category === "SNACKS" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>SNACKS</a></li>
+                  <li className='tab-list-item'><a className={`${category === "All" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>All</a></li>
+                  <li className='tab-list-item'><a className={`${category === "Fruits" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>Fruits</a></li>
+                  <li className='tab-list-item'><a className={`${category === "Vegetables" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>Vegetables</a></li>
+                  <li className='tab-list-item'><a className={`${category === "Snacks" ? 'active' : ''}`} onClick={(e) => setCategory(e.target.innerText)}>Snacks</a></li>
                 </ul>
              </div>           
             </div>

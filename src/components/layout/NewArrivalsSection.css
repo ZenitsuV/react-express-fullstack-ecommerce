@@ -7,7 +7,7 @@
       display: inline-block;
       vertical-align: top;
       font-size: 14px;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
       padding: 0;
       cursor: pointer;
       font-weight: 700;
@@ -23,7 +23,7 @@
     color: #777;
     position: relative;
     font-weight: 500;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   }
   
   .tab-list-item a.active {
