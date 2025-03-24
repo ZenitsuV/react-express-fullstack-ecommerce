@@ -17,4 +17,16 @@ export const accordianHandler = (e) => {
     } else {
     panel.style.maxHeight = panel.scrollHeight + "px";
     }      
-} 
+};
+
+export const handleSorting = (arr, sortOrder, column) => {
+  arr.sort((x,y) => {
+    let a = x[column];
+    let b = y[column];
+      if(sortOrder === "asc") {
+        return a < b ? -1 : a > b ? 1 : 0; 
+      } else {
+        return a < b ? 1 : a > b ? -1 : 0;
+      }
+  });
+}; 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import {Icon} from './components/common/Utilities'
 import Header from './components/layout/Header';
+import NavigationPath from './components/layout/NavigationPath';
 import CategorySwiper from './components/layout/CategorySwiper';
 import DealsSection from './components/layout/DealsSection';
 import Banner from './components/common/Banner';
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Header />
+      <NavigationPath />
       {/* <CategorySwiper/>
       <DealsSection/>
       <Banner bannerType='Large'/> 

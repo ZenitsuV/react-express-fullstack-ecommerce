@@ -7,11 +7,16 @@ import CheckboxList from '../common/CheckboxList';
 
 const Shop = () => {
     const[selectedItems, setSelectedItems] = useState([]);   
-   
+    const[selectSort, setSelectSort] = useState(""); 
+
     let categoryItems = selectedItems.length > 0 ? selectedItems : null;
 
     const handleAccordian = (e) => {     
         accordianHandler(e);
+    }
+
+    const handleSortDropdown = (e) => {
+        setSelectSort(e.target.value);
     }
 
     return (
@@ -32,12 +37,12 @@ const Shop = () => {
                             <div className='shop-pro-top'>
                                 <div className='pro-top-sort'>
                                     <div className='select-inner'>
-                                      <select name="gi-select" id="gi-select">
-                                            <option value="" disabled="" selected="">Sort by</option>
-                                            <option value="3">Name, A to Z</option>
-                                            <option value="4">Name, Z to A</option>
-                                            <option value="5">Price, low to high</option>
-                                            <option value="6">Price, high to low</option>
+                                      <select name="sort-select" id="sort-select" onChange={handleSortDropdown}>
+                                            <option value="" disabled="" >Sort by</option>
+                                            <option value="1">Name, A to Z</option>
+                                            <option value="2">Name, Z to A</option>
+                                            <option value="3">Price, low to high</option>
+                                            <option value="4">Price, high to low</option>
                                       </select>
                                       <Icon name="keyboard_arrow_down" />
                                     </div>
@@ -45,7 +50,7 @@ const Shop = () => {
                             </div>
                             <div className='shop-pro-content'>
                                 <div className='shop-pro-content-inner'>
-                                <Products isSwiperNeeded={false} category={categoryItems} count="10" />
+                                <Products isSwiperNeeded={false} category={categoryItems} count="10" filterBy={selectSort} />
                                 </div>
                             </div>
                         </div>
