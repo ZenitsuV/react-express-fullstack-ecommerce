@@ -1,36 +1,24 @@
 import { useState } from 'react';
 import './App.css';
-import {Icon} from './components/common/Utilities'
-import Header from './components/layout/Header';
-import NavigationPath from './components/layout/NavigationPath';
-import CategorySwiper from './components/layout/CategorySwiper';
-import DealsSection from './components/layout/DealsSection';
-import Banner from './components/common/Banner';
-import NewArrivalsSection from './components/layout/NewArrivalsSection';
-import ServiceSection from './components/layout/ServiceSection';
-import Footer from './components/layout/Footer';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/pages/Home';
 import ProductDetails from './components/pages/ProductDetails';
 import Shop from './components/pages/Shop';
-
+import Cart from './components/pages/Cart';
+import Checkout from './components/pages/Checkout';
 
 function App() {
-
-
   return (
-    <>
-      <Header />
-      <NavigationPath />
-      {/* <CategorySwiper/>
-      <DealsSection/>
-      <Banner bannerType='Large'/> 
-      <NewArrivalsSection />
-      <Banner bannerType='Small' />
-      <ServiceSection /> */}
-      {/* <ProductDetails /> */}
-      <Shop />
-      <Footer />
-    </>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/Shop" element={<Shop/>}></Route>
+          <Route path="/Cart" element={<Cart/>}></Route>
+          <Route path="/Checkout" element={<Checkout/>}></Route>
+          <Route path="/ProductDetails/:productId" element={<ProductDetails/>}></Route>
+          {/* <Route path="*" element={<NotFound/>}></Route> */}
+        </Routes>
+    </Router>
   );
 }
 

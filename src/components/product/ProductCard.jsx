@@ -1,7 +1,16 @@
 import React from 'react';
 import { Icon } from '../common/Utilities';
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, isShopPage = false}) => {
+
+  const imageSizeStyle = isShopPage ? {
+    width: '295px',
+    height: '210px',
+  }: {
+      width: '275px',
+      height: '200px',
+  };
 
     return (
         <>       
@@ -9,7 +18,7 @@ const ProductCard = ({product}) => {
          <div className='product-inner'>
           <div className='pro-image-outer'>
             <div className="pro-image">
-              <a className='image'><img src={product.url} /></a>
+              <a className='image'><img src={product.url} style={imageSizeStyle}/></a>
               <span className='flags'><span>sale</span></span>
               <div className='pro-actions'></div>              
             </div>               
@@ -19,7 +28,7 @@ const ProductCard = ({product}) => {
               <h6 className='pro-stitle'>{product.category}</h6>
             </a>
             <h5 className='pro-title'>
-              <a href="/">{product.name}</a>
+              <Link to={`/ProductDetails/${product.id}`}>{product.name}</Link>
             </h5>
             <div className='pro-rate-price'>
               <span className='pro-rating'>

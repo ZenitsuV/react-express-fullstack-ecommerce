@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
-import './Shop.css'
+import './Shop.css';
+import Header from '../layout/Header';
+import NavigationPath from '../layout/NavigationPath';
+import Footer from '../layout/Footer';
 import {Icon, accordianHandler} from '../common/Utilities';
 import Products from '../product/Products';
 import category from '/public/category';
@@ -21,6 +24,8 @@ const Shop = () => {
 
     return (
         <>
+        <Header/>
+        <NavigationPath/>
          <section className='shop-section pd-tb-40'>
             <div className='container'>
                 <div className='shop-wrapper'>
@@ -50,13 +55,14 @@ const Shop = () => {
                             </div>
                             <div className='shop-pro-content'>
                                 <div className='shop-pro-content-inner'>
-                                <Products isSwiperNeeded={false} category={categoryItems} count="10" filterBy={selectSort} />
+                                <Products isSwiperNeeded={false} category={categoryItems} count="10" filterBy={selectSort} isShopPage={true} />
                                 </div>
                             </div>
                         </div>
                 </div>
             </div>
          </section>
+         <Footer/>
         </>
     );
 }

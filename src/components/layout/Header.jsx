@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import SlideCart from './SlideCart';
 import SlideNav from './SlideNav';
 import { Icon } from '../common/Utilities';
@@ -15,14 +16,15 @@ const Header = () => {
        <div className='container' style={{flexDirection:'column'}}>
        <div className="header">
           <div className="header-logo">
-            <a>
+            <Link to="/">
               <img
-                style={{ width: '110px', backgroundSize: 'contain' }}
+                style={{ width: '145px', backgroundSize: 'contain' }}
                 src="https://grabit-react-next.maraviyainfotech.com/assets/img/logo/logo.png"
               />
-            </a>
+            </Link>
           </div>
 
+        {/* header search */}
         <div className="header-search" style={{width:'33%'}}>
           <form className="header-form">
             <input

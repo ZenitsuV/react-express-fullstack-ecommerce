@@ -14,7 +14,7 @@
 }
 
 a {
-  /* color: #646cff; */
+  color: inherit;
   transition: all 0.3sease-in-out;
   text-decoration: none;
 }
@@ -64,7 +64,9 @@ section {
   transition: all 0.5sease;
 }
 
-
+textarea {
+  resize: vertical;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

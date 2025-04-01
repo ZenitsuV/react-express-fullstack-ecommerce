@@ -5,7 +5,7 @@ import ProductSwiper from '../layout/ProductSwiper';
 import products from '/public/products';
 import {handleSorting} from '../common/Utilities';
 
-const Products = ({isSwiperNeeded, category, count = 12, filterBy = ""}) => {
+const Products = ({isSwiperNeeded, category, count = 12, filterBy = "", isShopPage}) => {
   category ??= "All";
   const filteredProducts =  category === 'All' ? products : products.filter((pro) => category.includes(pro.category));
 
@@ -27,7 +27,7 @@ const Products = ({isSwiperNeeded, category, count = 12, filterBy = ""}) => {
   let productItems;
   if(filteredProducts.length > 0) {
     productItems = filteredProducts.map((product) => (
-      <ProductCard product={product} key={product.id}/>
+      <ProductCard product={product} key={product.id} isShopPage={isShopPage}/>
     )).slice(0, count);  
   }
   else {
@@ -40,7 +40,7 @@ const Products = ({isSwiperNeeded, category, count = 12, filterBy = ""}) => {
      <>
      <div className='products-section'>
          <div className={`products-wrapper ${flexWrapClass}`}>
-            {isSwiperNeeded ? <ProductSwiper products={products} /> : productItems}     
+            {isSwiperNeeded ? <ProductSwiper products={products} isShopPage={isShopPage}/> : productItems}     
         </div>
     </div>
      </>

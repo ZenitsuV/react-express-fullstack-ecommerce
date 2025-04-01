@@ -2,7 +2,7 @@ import './CategorySwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Icon } from '../common/Utilities';
-import categories from '/public/category'
+import categories from '/public/category';
 
  const widthObj = {
      414 : '1',
@@ -25,7 +25,9 @@ const options = {
 
 
 const CategorySwiper = () => {
-  console.log(window.innerWidth);
+
+  console.log("Screen Width " + window.innerWidth);
+
   return (
     <>
      <section className='category-section'>

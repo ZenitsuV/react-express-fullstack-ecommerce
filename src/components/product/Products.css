@@ -184,6 +184,10 @@
   text-transform: capitalize;
 }
 
+.pro-title a:hover {
+  color: #8118d5;
+}
+
 .pro-rate-price {
   margin-top: 5px;
   margin-bottom: 0;

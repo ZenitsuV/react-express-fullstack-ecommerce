@@ -25,7 +25,7 @@ const options = {
 };
 
 
-const ProductSwiper = ({products}) => {
+const ProductSwiper = ({products, isShopPage}) => {
   const id = useId();
   //const arr = Array.from({length:products.length}).map((_,index) => index);
 
@@ -37,7 +37,7 @@ const ProductSwiper = ({products}) => {
             {products.map((product) => (
               <SplideSlide key={product.id}>
                 <div className="slide" >
-                 <ProductCard product={product}/>
+                 <ProductCard product={product} isShopPage={isShopPage}/>
                 </div>
               </SplideSlide>
             ))}

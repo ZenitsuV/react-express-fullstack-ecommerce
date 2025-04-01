@@ -1,33 +1,42 @@
 import React, { useState } from 'react';
 import './ProductDetails.css';
+import Header from '../layout/Header';
+import NavigationPath from '../layout/NavigationPath';
+import Footer from '../layout/Footer';
 import { Icon } from '../common/Utilities';
 import ProductQtyForm from '../common/ProductQtyForm';
+import { useParams } from 'react-router-dom';
+import products from '/public/products';
 
 const ProductDetails = () => {
+  const { productId } = useParams();
   const [variation, setVariation] = useState('250g');
 
-
-
+  const productData = products.filter((item) => item.id === productId);
+  const product = productData[0];
+  
     return (
         <>
+        <Header />
+        <NavigationPath />
          <section className='prod-details-section pd-tb-40'>
             <div className='container'>
                 <div className='wrapper'>
                    <div className='prod-image'>
-                     <img src="https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/2_1.jpg" />
+                     <img src={product.url} />
                    </div>
                    <div className='single-prod-desc'>
                      <div className='single-prod-content'>
-                        <h5 className='single-title'>Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.</h5>
+                        <h5 className='single-title'>{product.title}</h5>
                         <div className='single-price-stock'>
                             <div className='single-price'>
                                 <div className='final-price'>
-                                    $664.00
-                                    <span className='price-dis'>-78%</span>
+                                   {`₹${Number(product.newPrice).toFixed(2)}`}
+                                    <span className='price-dis'>{product.discount}</span>
                                 </div>
                                 <div className='mrp'>
                                   M.R.P. : 
-                                  <span>$2,999.00</span>
+                                  <span>{`₹${Number(product.oldPrice).toFixed(2)}`}</span>
                                 </div>
                             </div>
                             <div className='single-stock'>
@@ -35,7 +44,7 @@ const ProductDetails = () => {
                             </div>
                         </div>
                         <div className='single-desc'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1990.
+                           {product.description}
                         </div>
                         <div className='single-pro-variations'>
                             <div className='pro-variation-size'>
@@ -65,6 +74,7 @@ const ProductDetails = () => {
                 </div>
             </div>
          </section>
+         <Footer />
         </>
     );
 }

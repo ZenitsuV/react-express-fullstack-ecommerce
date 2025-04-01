@@ -32,7 +32,7 @@ const ProductQtyForm = () => {
         <>
           <div className='qty-plus-minus'>
             <div onClick={decrement} style={{margin: "0px 0px 0px 10px", cursor: "pointer"}}>-</div>
-            <input readonly="" class="qty-input" type="text" value={qtyCounter}  min="1" max="5" step="1" name="gi-qtybtn"  onChange={inputChangeHandler}></input>
+            <input readOnly="" className="qty-input" type="text" value={qtyCounter}  min="1" max="5" step="1" name="gi-qtybtn"  onChange={inputChangeHandler}></input>
             <div onClick={increment} style={{margin: "0px 10px 0px 0px", cursor: "pointer"}}>+</div>
         </div>  
         </>
