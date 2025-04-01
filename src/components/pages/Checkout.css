@@ -610,11 +610,12 @@ i.gicon.star {
     line-height: 1.2;
 }
 
-.checkout-wrap .check-bill .check-subtitle {
+.checkout-wrap .check-bill .checkout-subtitle {
     margin-bottom: 10px;
 }
 
-.check-subtitle {
+
+.checkout-subtitle {
     margin-bottom: 14px;
     color: #4b5966;
     font-size: 15px;
@@ -628,7 +629,7 @@ i.gicon.star {
 }
 
 .bill-option {
-    margin-bottom: 32px;
+    margin-bottom: 25px;
     display: block;
 }
 
@@ -671,9 +672,10 @@ i.gicon.star {
     color: #4b5966;
     font-size: 14px;
     padding: 0 15px;
-    width: 100%;
+    width: 96%;
     outline: none;
     border-radius: 5px;
+    font-family: inherit;
 }
 
 .form-control {
@@ -739,6 +741,7 @@ input {
     color: #777;
     cursor: pointer;
     border-radius: 5px;
+    font-family: inherit;
 }
 
 .checkout-wrap .check-bill-form .bl-select-inner::after {
@@ -783,4 +786,70 @@ input {
     -ms-flex-pack: end;
     justify-content: flex-end;
     padding: 0;
+}
+
+
+/* login form */
+
+.check-login-form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.check-login-form label {
+    margin-bottom: 11px;
+    color: #4b5966;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.check-login-form input {
+    background-color: transparent;
+    border: 1px solid #eee;
+    color: #4b5966;
+    font-size: 14px;
+    margin-bottom: 0px;
+    padding: 0 15px;
+    width: 95%;
+    outline: none;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: var(--bs-form-invalid-color);
+}
+
+.check-login-form .check-login-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.check-login-form .check-login-btn .btn-2 {
+    margin-right: 20px;
+}
+
+.check-login-form .check-login-fp {
+    color: #4b5966;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-decoration: underline;
+    font-size: 15px;
+    line-height: 24px;
 }

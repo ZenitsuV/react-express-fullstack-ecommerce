@@ -1,0 +1,179 @@
+
+
+.section-title {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.section-title h2 {
+    margin-bottom: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 600;
+    color: #4b5966;
+    position: relative;
+    display: inline;
+    padding: 0;
+    text-transform: capitalize;
+    line-height: 1;
+}
+
+.section-title p {
+    max-width: 400px;
+    margin: 15px 0 0 0;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    line-height: 23px;
+}
+
+
+.register-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 0;
+}
+
+.register-wrapper .register-container {
+    border: 1px solid #eee;
+    padding: 30px;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.register-wrapper .register-container .register-form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    margin: 0 -15px;
+    gap: 20px;
+}
+
+.register-wrapper .register-container .register-form .register-wrap.register-half {
+    width: 45%;
+}
+
+.register-wrapper .register-container .register-form .register-wrap {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.register-wrapper .register-container .register-form label {
+    margin-bottom: 9px;
+    color: #4b5966;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.register-wrapper .register-container .register-form input {
+    width: 100%;
+    background-color: transparent;
+    color: #777;
+    font-size: 14px;
+    padding: 0 15px;
+    width: 300;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid rgb(222, 226, 230);
+    font-family: inherit;
+}
+
+.register-wrapper .register-container .register-form .rg-select-inner {
+    width: 106%;
+    height: 50px;
+    padding: 0;
+    /* border: 1px solid #eee; */
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.register-wrapper .register-container .register-form .rg-select-inner select {
+    padding: 0 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #fff;
+    background-image: none;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 10px;
+    color: #777;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid rgb(222, 226, 230);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: .875rem;
+}
+
+
+.register-wrapper .register-container .register-form .register-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.register-wrapper .register-container .register-form .register-btn button {
+    padding: 8px 15px;
+}
+
+.register-wrapper .register-container .register-form .register-btn span {
+    color: #777;
+    font-size: 14px;
+}
+
+.register-wrapper .register-container .register-form .register-btn span a {
+    margin-left: 10px;
+    color: #4b5966;
+}
+
+.register-wrapper .register-container .register-form .register-wrap.recaptcha {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.d-none {
+    display: none !important;
+}
