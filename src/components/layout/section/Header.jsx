@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import SlideCart from './SlideCart';
-import SlideNav from './SlideNav';
-import { Icon } from '../common/Utilities';
+import SlideCart from '../UI/SlideCart';
+import SlideNav from '../UI/SlideNav';
+import { Icon } from '../../common/Utilities';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
      <header className='header-section'>
-       <div className='container' style={{flexDirection:'column'}}>
+       <div className='container' style={{flexDirection:'column',overflow: "inherit"}}>
        <div className="header">
           <div className="header-logo">
             <Link to="/">
@@ -62,14 +62,15 @@ const Header = () => {
 
            {/* acc-btn - submenu */}
             <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
-              <span style={{ fontSize: '13px' }}>Register</span>
-              <span style={{ fontSize: '13px' }}>Checkout</span>
-              <span style={{ fontSize: '13px' }}>Login</span>
+              <span style={{ fontSize: '13px' }}><Link to="/register">Register</Link></span>
+              <span style={{ fontSize: '13px' }}><Link to="/Checkout">Checkout</Link></span>
+              <span style={{ fontSize: '13px' }}><Link to="/Orders">Orders</Link></span>
+              <span style={{ fontSize: '13px' }}><Link to="/Login">Login</Link></span>
             </div>
 
             {/* wishlist btn */}
             <div className="header-wishlist-btn">
-              <a href="#" style={{ display: 'flex' }}>
+              <Link to="/Wishlist" style={{ display: 'flex' }} >
                 <div className="header-icon">
                   <Icon name="favorite" style={{ fontSize: '30px' }}/>
                   <span className='header-icon-count'>3</span>
@@ -83,7 +84,7 @@ const Header = () => {
                     3-ITEMS
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* cart btn */}

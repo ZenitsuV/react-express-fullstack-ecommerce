@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ProductDetails.css';
-import Header from '../layout/Header';
-import NavigationPath from '../layout/NavigationPath';
-import Footer from '../layout/Footer';
+import Header from '../layout/section/Header';
+import NavigationPath from '../layout/UI/NavigationPath';
+import Footer from '../layout/section/Footer';
 import { Icon } from '../common/Utilities';
 import ProductQtyForm from '../common/ProductQtyForm';
 import { useParams } from 'react-router-dom';

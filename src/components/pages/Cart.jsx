@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Cart.css';
-import Header from '../layout/Header';
-import NavigationPath from '../layout/NavigationPath';
-import Footer from '../layout/Footer';
+import Header from '../layout/section/Header';
+import NavigationPath from '../layout/UI/NavigationPath';
+import Footer from '../layout/section/Footer';
 import ProductQtyForm from '../common/ProductQtyForm';
 import { Icon } from '../common/Utilities';
 
@@ -264,7 +264,7 @@ const Cart = () => {
                                 <div className="row" style={{padding: '0 10px'}}>
                                 <div className="col-lg-12" style={{width:'95%'}}>
                                     <div className="cart-update-bottom">
-                                     <a href="/">Continue Shopping</a>
+                                     <Link to="/Shop">Continue Shopping</Link>
                                      <Link to="/Checkout">Check Out</Link>
                                     </div>
                                 </div>

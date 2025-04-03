@@ -6,7 +6,11 @@ import ProductDetails from './components/pages/ProductDetails';
 import Shop from './components/pages/Shop';
 import Cart from './components/pages/Cart';
 import Checkout from './components/pages/Checkout';
+import Orders from './components/pages/Orders';
+import OrderDetails from './components/pages/OrderDetails';
+import Wishlist from './components/pages/Wishlist';
 import Register from './components/pages/Register';
+import Login from './components/pages/Login';
 
 function App() {
   return (
@@ -16,7 +20,11 @@ function App() {
           <Route path="/Shop" element={<Shop/>}></Route>
           <Route path="/Cart" element={<Cart/>}></Route>
           <Route path="/Checkout" element={<Checkout/>}></Route>
+          <Route path="/Orders" element={<Orders/>}></Route>
+          <Route path="/OrderDetails" element={<OrderDetails/>}></Route>
+          <Route path="/Wishlist" element={<Wishlist/>}></Route>
           <Route path="/Register" element={<Register/>}></Route>
+          <Route path="/Login" element={<Login/>}></Route>
           <Route path="/ProductDetails/:productId" element={<ProductDetails/>}></Route>
           {/* <Route path="*" element={<NotFound/>}></Route> */}
         </Routes>

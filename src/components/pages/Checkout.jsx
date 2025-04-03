@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import './Checkout.css';
-import Header from '../layout/Header';
-import NavigationPath from '../layout/NavigationPath';
-import Footer from '../layout/Footer';
+import Header from '../layout/section/Header';
+import NavigationPath from '../layout/UI/NavigationPath';
+import LoginForm from '../layout/UI/LoginForm';
+import Footer from '../layout/section/Footer';
 import { Icon } from '../common/Utilities';
 
 const Checkout = () => {
@@ -447,52 +448,7 @@ const Checkout = () => {
                                      
                                             {(!guestFormVisible && checkOpt === "guest") ?  <div className='new-btn'><button className='btn-2' style={{cursor:"pointer", textTransform:"uppercase"}} onClick={() => setGuestFormVisible(true)}>Continue</button>  </div> : ""}
                                             {(!guestFormVisible && checkOpt === "register") ? <div className='new-btn'><Link to="/register"><button className='btn-2' style={{cursor:"pointer", textTransform:"uppercase"}} >Continue</button></Link>  </div>: ""}
-                                                               
-                                            {/* login form  */}
-                                            {checkOpt === "login" ? 
-                                            <div className="m-b-40" style={{marginTop: "15px"}}>
-                                                <div className="checkout-block check-login">
-                                                    <div className="check-login-form">
-                                                    <form novalidate="" action="#" method="post" className="">
-                                                        <span className="check-login-wrap">
-                                                        <label>Email Address</label>
-                                                        <div>
-                                                            <input
-                                                            placeholder="Enter your email address"
-                                                            required=""
-                                                            className="form-control"
-                                                            type="text"
-                                                            value=""
-                                                            name="email"
-                                                            />
-                                                            <div className="invalid-feedback">
-                                                            Please Enter correct username.
-                                                            </div>
-                                                        </div></span>
-                                                        <span className="check-login-wrap" style={{marginTop: "24px"}}>
-                                                            <label>Password</label>
-                                                        <div>
-                                                            <input
-                                                            pattern="^\d{6,12}$"
-                                                            placeholder="Enter your password"
-                                                            required=""
-                                                            className="form-control"
-                                                            type="password"
-                                                            value=""
-                                                            name="password"
-                                                            />
-                                                            <div className="invalid-feedback">
-                                                            Please Enter 6-12 digit number.
-                                                            </div>
-                                                        </div></span>
-                                                        <span className="check-login-wrap check-login-btn">
-                                                            <button className="btn-2" type="submit">Continue</button>
-                                                            <a className="check-login-fp" href="#">Forgot Password?</a></span>
-                                                    </form>
-                                                    </div>
-                                                </div>
-                                            </div> : ""}
-   
+                                                                                                         
                                         </div>
                                     </div>
                                 </div>
@@ -590,6 +546,9 @@ const Checkout = () => {
                                         </div>
                                     </div>
                                 </div> }
+
+                                {/* Login Form */}
+                                 {checkOpt === "login" ?  <div className='login-wrapper' style={{margin:0, maxWidth:"inherit"}}><LoginForm isCheckout="true" /></div> : "" }   
                             </div>
                         </div>
                       </div>

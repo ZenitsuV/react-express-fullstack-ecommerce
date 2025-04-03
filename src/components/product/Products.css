@@ -65,10 +65,6 @@
     pointer-events: none;
 }
 
-.image img {
-  width: 295px;
-  height: 210px;
-}
 
 .flags {
     right: auto;
@@ -268,7 +264,7 @@
 
 
 @media only screen and (max-width: 767px) {
-  .pro-image img {
+  .pro-image .image img {
     width: 380px;
     background-size: contain;
   }

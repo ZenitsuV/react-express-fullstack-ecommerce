@@ -1,7 +1,7 @@
 import React from 'react';
 import './Products.css';
 import ProductCard from './ProductCard';
-import ProductSwiper from '../layout/ProductSwiper';
+import ProductSwiper from '../layout/section/ProductSwiper';
 import products from '/public/products';
 import {handleSorting} from '../common/Utilities';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './DealsSection.css'
-import Products from '../product/Products';
+import Products from '../../product/Products';
 
 const DealsSection = () => {
     return (

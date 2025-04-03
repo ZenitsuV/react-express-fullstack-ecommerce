@@ -99,8 +99,8 @@
   margin-bottom: 20px;
 }
 
-.cart-btn a {
-  width: 48%;
+.cart-btn button {
+  width: 145px;
   /* height: 40px; */
   display: block;
   text-transform: uppercase;
@@ -124,6 +124,7 @@
   text-decoration: none;
   position: relative;
   border-radius: 5px;
+  padding: 10px 15px;
 }
 
 .cart-btn .btn-2 {
@@ -139,4 +140,5 @@
   text-decoration: none;
   position: relative;
   border-radius: 5px;
+  padding: 10px 15px;
 }

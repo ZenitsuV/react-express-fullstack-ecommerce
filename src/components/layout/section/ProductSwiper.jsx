@@ -2,7 +2,7 @@ import { useId } from 'react';
 import './ProductSwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import ProductCard from '../product/ProductCard';
+import ProductCard from '../../product/ProductCard';
 //import products from '/public/products'
 
  const widthObj = {

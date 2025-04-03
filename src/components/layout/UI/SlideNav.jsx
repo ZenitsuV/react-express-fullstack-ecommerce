@@ -1,6 +1,6 @@
 import React from 'react'
 import './SlideNav.css';
-import { Icon } from '../common/Utilities';
+import { Icon } from '../../common/Utilities';
 
 const SlideNav = ({isSlideMenuActive, setIsSlideMenuActive, slidePosition}) => {
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './NewArrivalsSection.css';
-import Products from '../product/Products';
+import Products from '../../product/Products';
 
 const NewArrivalsSection = () => {
     const [category, setCategory] = useState("All");

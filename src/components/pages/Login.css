@@ -1,0 +1,123 @@
+
+
+.login-content {
+    max-width: 1000px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.login-content .login-box {
+    width: 900px;
+    padding: 0 15px;
+}
+
+.login-wrapper {
+    max-width: 530px;
+    margin: 0 auto 0;
+}
+
+.login-wrapper .login-container {
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    text-align: left;
+    background-color: #fff;
+}
+
+.login-wrapper .login-container .login-form form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.login-wrapper .login-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.login-wrapper .login-container .login-form label {
+    margin-bottom: 10px;
+    color: #4b5966;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.login-wrapper .login-container .login-form input {
+    padding: 0 15px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #777;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid rgb(222, 226, 230);
+    font-family: inherit;
+}
+
+.login-wrapper .login-container .login-form .login-fp label a {
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.login-wrapper .login-container .login-form .login-btn span {
+    color: #777;
+    font-size: 14px;
+}
+
+.login-wrapper .login-container .login-form .login-btn {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login-wrapper .login-container .login-form .login-btn button {
+    padding: 8px 15px;
+}
+
+.form-control {
+    display: block;
+    width: 95%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    background-clip: padding-box;
+    transition: border-color .15sease-in-out, box-shadow .15sease-in-out;
+}

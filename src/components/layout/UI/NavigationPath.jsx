@@ -1,20 +1,26 @@
 import React from 'react';
 import './NavigationPath.css';
 import { Link, useLocation } from 'react-router-dom';
-import ProductDetails from '../pages/ProductDetails';
+import ProductDetails from '../../pages/ProductDetails';
 
 const NavigationPath = () => {
     const location = useLocation();
     const currentPath = location.pathname;
     const currentPageName = currentPath.split('/')[1];
 
-   const pageObj = {
+    const pageObj = {
       ProductDetails : "Product Details",
       Home : "Home",
       Shop : "Shop Page",
       Cart : "Cart",
+      Checkout : "Checkout",
+      Wishlist : "Wishlist",
+      Orders : "My Orders",
+      OrderDetails : "My Order Details",
       register : "Register Page",
+      Login : "Login Page",
    }
+  
   
  
 

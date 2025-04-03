@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SlideCartProductList.css';
-import ProductQtyForm from '../common/ProductQtyForm';
+import ProductQtyForm from '../../common/ProductQtyForm';
 
 const SlideCartProductList = () => {
   return (

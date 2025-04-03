@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './SlideCart.css';
-import { Icon } from '../common/Utilities';
+import { Icon } from '../../common/Utilities';
 import SlideCartProductList from './SlideCartProductList';
 
 const SlideCart = ({ isSlideCartActive, setIsSlideCartActive }) => {
@@ -44,12 +45,16 @@ const SlideCart = ({ isSlideCartActive, setIsSlideCartActive }) => {
               </table>
             </div>
             <div className="cart-btn">
-              <a className="btn-1" href="/">
-                View Cart
-              </a>
-              <a className="btn-2" href="/">
-                Checkout
-              </a>
+             <Link to="/Cart">
+                <button className="btn-1" href="/">
+                    View Cart
+                  </button>
+              </Link> 
+              <Link to="/Checkout">
+                <button className="btn-2" href="/">
+                  Checkout
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import './Register.css';
-import Header from '../layout/Header';
-import NavigationPath from '../layout/NavigationPath';
-import Footer from '../layout/Footer';
+import Header from '../layout/section/Header';
+import NavigationPath from '../layout/UI/NavigationPath';
+import Footer from '../layout/section/Footer';
 
 const Register = () => {
     return (

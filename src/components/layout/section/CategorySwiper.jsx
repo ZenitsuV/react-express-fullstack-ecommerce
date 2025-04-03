@@ -1,7 +1,7 @@
 import './CategorySwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Icon } from '../common/Utilities';
+import { Icon } from '../../common/Utilities';
 import categories from '/public/category';
 
  const widthObj = {

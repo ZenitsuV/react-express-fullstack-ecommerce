@@ -1,6 +1,6 @@
 import React from 'react';
 import './ServiceSection.css';
-import {Icon} from '../common/Utilities'
+import {Icon} from '../../common/Utilities';
 
 const ServiceSection = () => {
      return (

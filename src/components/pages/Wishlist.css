@@ -1,0 +1,133 @@
+
+.wishlist-section .content-wrapper {
+    flex: 1 0 auto;
+    /* width: 100%; */
+}
+
+
+.wishlist-section .dashboard-card {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+
+.wishlist-section .card-header {
+    min-width: 700px;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.wishlist-section .card-header h5 {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #777;
+}
+
+.wishlist-section .card-body {
+    padding: 30px;
+    min-width: 700px;
+}
+
+.wishlist-section .table tbody tr td .btn {
+    width: 30px;
+    height: 30px;
+    margin: 0 3px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.section-title h2 span {
+    color: #8118d5;
+}
+
+/* table */
+
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
+.table>:not(caption)>*>* {
+    padding: .5rem;
+    border-bottom-width: 1px;  
+}
+
+.wishlist-section .table > :not(:first-child) {
+    border-top: 2px solid #dee2e6;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+
+.card-body .card-table {
+    overflow-y: hidden;
+}
+
+
+.wishlist-section .table thead tr th {
+    bottom: 0 !important;
+    color: #4b5966;
+    font-size: 15px;
+    font-weight: 500;
+    padding: .5rem;
+    text-align: left;
+}
+
+.wishlist-section .table tbody tr td .prod-img {
+    width: 58px;
+    height: 58px;
+}
+
+.wishlist-section .table tbody tr td span {
+    padding: 14px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #777;
+    gap: 15px;
+}
+
+.wishlist-section  .table tbody tr td .avl {
+    color: #5caf90;
+}
+
+.wishlist-section .table tbody tr td .out {
+    color: #e9abab;
+}
+
+
+@media only screen and (max-width: 767px) {
+    
+    .content-wrapper {
+        flex: 1 0 auto;
+        /* width: 100%; */
+    }
+
+    .wishlist-section .table tbody tr td span {
+        font-size: 14px;
+    }
+
+}

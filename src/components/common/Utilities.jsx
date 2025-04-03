@@ -30,3 +30,6 @@ export const handleSorting = (arr, sortOrder, column) => {
       }
   });
 }; 
+
+
+ 

@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './Shop.css';
-import Header from '../layout/Header';
-import NavigationPath from '../layout/NavigationPath';
-import Footer from '../layout/Footer';
+import Header from '../layout/section/Header';
+import NavigationPath from '../layout/UI/NavigationPath';
+import Footer from '../layout/section/Footer';
 import {Icon, accordianHandler} from '../common/Utilities';
 import Products from '../product/Products';
 import category from '/public/category';
-import CheckboxList from '../common/CheckboxList';
+import CheckboxList from '../layout/UI/CheckboxList';
 
 const Shop = () => {
     const[selectedItems, setSelectedItems] = useState([]);   

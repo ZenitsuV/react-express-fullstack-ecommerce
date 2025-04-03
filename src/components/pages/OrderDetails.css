@@ -1,0 +1,20 @@
+.bill-box {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.bill-box .single-list ul li {
+    padding: 8px 10px;
+}
+
+
+.check-subtitle {
+    margin-bottom: 14px;
+    color: #4b5966;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1;
+}
