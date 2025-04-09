@@ -1,0 +1,91 @@
+.heart_container {
+    display: flex;
+    justify-content: right;
+    margin: 5px;
+  }
+  
+  .heart_nonselected {
+    width: 15px;
+    height: 15px;
+    background-color: #e0e0e0;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 8px #e0e0e0;
+    cursor: pointer;
+  }
+  
+  .heart_nonselected::before,
+  .heart_nonselected::after {
+    width: 15px;
+    height: 15px;
+    background-color: #e0e0e0;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #e0e0e0;
+  }
+  
+  .heart_nonselected::before {
+    bottom: 0px;
+    left: -10px;
+  }
+  
+  .heart_nonselected::after {
+    bottom: 0px;
+    top: -10px;
+  }
+  
+  .heart_selected {
+    width: 15px;
+    height: 15px;
+    background-color: #8118d5;
+    position: relative;
+    transform: rotate(45deg);
+    border: 0;
+    box-shadow: 0 2px 8px #8118d5;
+    cursor: pointer;
+  }
+  
+  .heart_selected::before,
+  .heart_selected::after {
+    width: 15px;
+    height: 15px;
+    background-color: #8118d5;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #8118d5;
+  }
+  
+  .heart_selected::before {
+    bottom: 0px;
+    left: -10px;
+  }
+  
+  .heart_selected::after {
+    bottom: 0px;
+    top: -10px;
+  }
+  
+  .heart_selected {
+    animation: heart-bump 600ms ease-out;
+  }
+  
+  @keyframes heart-bump {
+    0% {
+      transform: scale(1) rotate(45deg);
+    }
+    10% {
+      transform: scale(0.9) rotate(45deg);
+    }
+    30% {
+      transform: scale(1.1) rotate(45deg);
+    }
+    50% {
+      transform: scale(1.15) rotate(45deg);
+    }
+    100% {
+      transform: scale(1) rotate(45deg);
+    }
+  }
+  

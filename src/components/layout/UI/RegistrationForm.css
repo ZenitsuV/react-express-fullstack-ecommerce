@@ -1,0 +1,28 @@
+.error-message {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545;
+}
+
+.error {
+    border-color: #dc3545 !important;
+}
+
+input:-webkit-autofill{
+    background-color: white !important;
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
+}
+
+::file-selector-button {
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgb(24, 117, 24);
+  }
+
+  ::file-selector-button:hover {
+    background-color: salmon;
+    cursor: pointer;
+  }

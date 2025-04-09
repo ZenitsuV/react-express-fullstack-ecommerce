@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Register.css';
+import './NewProduct.css';
 import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
-import RegistrationForm from '../layout/UI/RegistrationForm';
+import NewProductForm from '../admin/NewProductForm';
 
-const Register = () => {
+const NewProduct = () => {
  
     return (
         <>
@@ -15,14 +15,14 @@ const Register = () => {
             <section className='register-section'>
                 <div className='container' style={{flexDirection: "column"}}>
                     <div className='section-title'>
-                        <h2 className='title'>Register</h2>
+                        <h2 className='title'>Add New Product</h2>
                         <p>Best place to buy and sell digital products.</p>
                     </div>
                     <div className='row'>
                         <div className='register-wrapper'>
                             <div className='register-container'>
                                <div className='register-form'>
-                                    <RegistrationForm />
+                                    <NewProductForm />
                                </div>
                             </div> 
                         </div>
@@ -34,4 +34,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default NewProduct;

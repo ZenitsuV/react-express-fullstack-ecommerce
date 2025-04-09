@@ -1,8 +1,38 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import HeartButton from '../layout/UI/HeartButton';
 import { Icon } from '../common/Utilities';
 import { Link } from 'react-router-dom';
+import { favActions } from '../../store/wishlist';
 
 const ProductCard = ({product, isShopPage = false}) => {
+
+  const disPatch = useDispatch();
+  const favouriteItems = useSelector((state) => state.favourite.favouriteItems);
+
+  const isItemFavourite = (arr, id) => {
+    // if (items.length > 0) return arr[items].some((item) => item.productId === id);
+    //else return false;
+  };
+
+  const itemIsFavourite = isItemFavourite(favouriteItems, product.id);
+
+  let cssClass;
+  if (itemIsFavourite) cssClass = 'heart_selected';
+  else cssClass = 'heart_nonselected';
+
+  const toggleFavouriteItem = () => {
+    if (itemIsFavourite) {
+      disPatch(favActions.removeFavouriteItem(product.id));
+    } else {
+      let wishlistObj = {  
+          user: "admin",         
+          productId:product.id,   
+      }
+      disPatch(favActions.addFavouriteItem(wishlistObj));
+    }
+  };
+
 
   const imageSizeStyle = isShopPage ? {
     width: '295px',
@@ -19,8 +49,8 @@ const ProductCard = ({product, isShopPage = false}) => {
           <div className='pro-image-outer'>
             <div className="pro-image">
               <a className='image'><img src={product.url} style={imageSizeStyle}/></a>
-              <span className='flags'><span>sale</span></span>
-              <div className='pro-actions'></div>              
+              <span className='flags'><HeartButton onHeartClick={toggleFavouriteItem} cssClass={cssClass} /> </span>
+                  
             </div>               
           </div>
           <div className='product-info'>

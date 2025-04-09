@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 
 export const Icon = ({ name, className, style }) => {
     return (
@@ -31,5 +33,11 @@ export const handleSorting = (arr, sortOrder, column) => {
   });
 }; 
 
+export const getUserWishlist = () => {
+  let filteredByUser;
+  const favouriteItems = useSelector((state) => state.wishlist.favouriteItems);
+  filteredByUser = favouriteItems.filter((item) => item.user === "admin");
+  return filteredByUser;
+}
 
  

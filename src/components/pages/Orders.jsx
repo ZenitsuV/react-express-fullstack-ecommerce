@@ -27,8 +27,8 @@ const Orders = () => {
                     <div className='content-wrapper'>
                         <div className='dashboard-card'>
                             <div className='card-header'>
-                                <h5>Orders</h5>
-                                <div className='pro-top-sort' style={{border: "1px solid #eee"}}>
+                                <h5 style={{flex:"1 0 0"}}>Orders</h5>
+                                <div className='pro-top-sort' style={{border: "1px solid #eee", marginRight: "25px"}}>
                                     <div className='select-inner' style={{border: "0"}}>
                                         <select name="sort-select" id="sort-select" onChange={handleSortDropdown}>
                                                 <option value="" disabled="" >Filter by</option>

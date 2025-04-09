@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import "./Wishlist.css";
 import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
@@ -7,6 +8,8 @@ import Footer from '../layout/section/Footer';
 import { Icon } from "../common/Utilities";
 
 const Wishlist = () => {
+    const favouriteItems = useSelector((state) => state.wishlist.favouriteItems);
+
     return (
         <>
          <Header/>
