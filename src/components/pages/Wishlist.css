@@ -99,6 +99,7 @@ tbody, td, tfoot, th, thead, tr {
 .wishlist-section .table tbody tr td .prod-img {
     width: 58px;
     height: 58px;
+    float: left;
 }
 
 .wishlist-section .table tbody tr td span {

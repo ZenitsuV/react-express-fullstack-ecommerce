@@ -19,6 +19,8 @@ const NavigationPath = () => {
       OrderDetails : "My Order Details",
       register : "Register Page",
       Login : "Login Page",
+      NewProduct: "New Product",
+      ViewProducts: "View Products"
    }
   
   

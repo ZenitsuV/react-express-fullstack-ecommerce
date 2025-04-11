@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {getCurrentDate} from '../common/Utilities';
 
 const RegistrationForm = () => {
     const navigate = useNavigate();
@@ -14,20 +14,38 @@ const RegistrationForm = () => {
        image:'',
        brand:'',
        category:'',
+       subCategory:'',
        active:'',
        tags:''
     })
     const [errors, setErrors] = useState({});
+    const [selectedImage, setSelectedImage] = useState(null);
      
-   
+
     const handleChange = (e) => {
        const {name, value, type} = e.target;
        setFormData({
            ...formData,
            [name]:value
        });
+
+     // Clear error when user starts typing
+     if (errors[name]) {
+        setErrors({
+          ...errors,
+          [name]: '',
+          form: ''
+        });
+      }
+
     };
 
+
+    const handleImageUpload = (e) => {
+        setSelectedImage(e.target.files[0].name);
+    }
+
+ 
 
   const validateForm = () => {
     const newErrors= {};
@@ -62,7 +80,7 @@ const RegistrationForm = () => {
         newErrors.stock = 'Stock is invalid';
      }
    
-     if (!formData.image) {
+     if (!selectedImage) {
         newErrors.image = 'Image is required';
     }
 
@@ -73,6 +91,11 @@ const RegistrationForm = () => {
     if (!formData.category) {
         newErrors.category = 'Category is required';
     }
+
+    if (!formData.subCategory) {
+        newErrors.subCategory = 'Sub Category is required';
+    }
+
 
     if (!formData.active) {
         newErrors.active = 'Active is required';
@@ -92,31 +115,36 @@ const RegistrationForm = () => {
     
     if (!validateForm()) return;
     
+   let percentValue = (formData.discountPrice / formData.price) * 100;
+   let discountPercentage = (percentValue - 100).toFixed(2);
+   let createdAt =  getCurrentDate();
     try {
        const formObj = {
             productName: formData.productName,
             title: formData.title,
-            price: formData.price,
-            discountPrice: formData.discountPrice,
+            price: Number(formData.price),
+            discountPrice: Number(formData.discountPrice),
+            discountPercentage: Number(discountPercentage),
             description: formData.description,
-            stock: formData.stock,
-            images: formData.image,
+            stock: Number(formData.stock),
+            images: selectedImage,
             brand: formData.brand,
             category: formData.category,
+            subCategory: formData.subCategory,
             active: formData.active,
             tags: formData.tags,
-            createdAt: Date.now,
-            updatedAt: Date,
-            rating: { type: Number, default: 0 },
-            numReviews: { type: Number, default: 0 },
-            isFeatured: { type: Boolean, default: false },
-
+            createdAt: createdAt,
+            updatedAt: createdAt,
+            rating: 0,
+            numReviews: 0,
+            isFeatured:false,
+            variations: [],
       };
       
      console.log(formObj);
 
       // Send data to your backend API
-      /* const response = await fetch('/api/register', {
+      /* const response = await fetch('/api/add-product', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -129,7 +157,7 @@ const RegistrationForm = () => {
         }  */
       
       // Registration successful - redirect or show success message
-     navigate('/login');
+     navigate('/NewProduct');
     } catch (error) {
       console.error('Registration error:', error);
       setErrors({
@@ -251,8 +279,10 @@ const RegistrationForm = () => {
                 <label>Image*</label>
                 <div>
                     <label class="file">
-                        <input type="file" id="file" name="image" aria-label="File browser example" />
-                        <span class="file-custom"></span>
+                        <input type="file" id="file" name="image" aria-label="File browser example" 
+                          onChange={handleImageUpload}
+                        />
+                       
                     </label>
                     {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
                 </div>
@@ -293,6 +323,23 @@ const RegistrationForm = () => {
             </span>
 
             <span className="register-wrap register-half" style={{marginTop: "10px"}}>
+                <label>Sub Category</label>
+                <div className="rg-select-inner  ">
+                    <select
+                        name="subCategory"
+                        required=""
+                        className={errors.category ? 'register-select form-select form-select-sm error' : 'register-select form-select form-select-sm'}
+                        id="select-subCategory"
+                        onChange={handleChange}
+                        >
+                        <option value="">Region/State</option>
+                        <option value="TN">Tamil Nadu</option>      
+                    </select>           
+                </div>       
+                {errors.subCategory && <span className="error-message">{errors.subCategory}</span>}   
+            </span>
+
+            <span className="register-wrap register-half" style={{marginTop: "10px"}}>
                 <label>Active</label>
                 <div className="rg-select-inner">
                     <select
@@ -302,6 +349,7 @@ const RegistrationForm = () => {
                         id="select-active"
                         onChange={handleChange}
                     >
+                        <option value="">Active</option>   
                         <option value="true">Yes</option>      
                         <option value="false">No</option>      
                     </select>               
@@ -319,6 +367,7 @@ const RegistrationForm = () => {
                         id="select-tags"
                         onChange={handleChange}
                     >
+                        <option value="">Tags</option>   
                         <option value="New">New</option>      
                         <option value="Sale">Sale</option>      
                     </select>               
@@ -326,8 +375,8 @@ const RegistrationForm = () => {
                 {errors.tags && <span className="error-message">{errors.tags}</span>}
             </span>
             
-            <span className="register-wrap register-btn" style={{marginTop: "10px"}}>            
-                <button className="btn-1" type="submit" style={{justifyContent:'end'}}>Add</button></span>
+            <span className="register-wrap register-btn" style={{marginTop: "10px", justifyContent:'end'}}>            
+                <button className="btn-1" type="submit" >Add</button></span>
         </form>   
 
     </div>

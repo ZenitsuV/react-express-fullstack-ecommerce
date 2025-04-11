@@ -13,6 +13,7 @@ import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 
 import NewProduct from './components/admin/NewProduct';
+import ViewProducts from './components/admin/ViewProducts';
 
 function App() {
   return (
@@ -27,8 +28,9 @@ function App() {
           <Route path="/Wishlist" element={<Wishlist/>}></Route>
           <Route path="/Register" element={<Register/>}></Route>
           <Route path="/Login" element={<Login/>}></Route>
-          <Route path="/NewProduct" element={<NewProduct/>}></Route>
           <Route path="/ProductDetails/:productId" element={<ProductDetails/>}></Route>
+          <Route path="/NewProduct" element={<NewProduct/>}></Route>
+          <Route path="/ViewProducts" element={<ViewProducts/>}></Route>
           {/* <Route path="*" element={<NotFound/>}></Route> */}
         </Routes>
    </Router>

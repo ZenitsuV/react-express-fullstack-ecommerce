@@ -26,6 +26,17 @@ const RegistrationForm = () => {
            ...formData,
            [name]:value
        });
+
+     // Clear error when user starts typing
+      if (errors[name]) {
+        setErrors({
+          ...errors,
+          [name]: '',
+          form: ''
+        });
+      }
+
+
     };
 
     console.log(formData);

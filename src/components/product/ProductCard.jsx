@@ -48,7 +48,7 @@ const ProductCard = ({product, isShopPage = false}) => {
          <div className='product-inner'>
           <div className='pro-image-outer'>
             <div className="pro-image">
-              <a className='image'><img src={product.url} style={imageSizeStyle}/></a>
+              <a className='image'><img src={product.images} style={imageSizeStyle}/></a>
               <span className='flags'><HeartButton onHeartClick={toggleFavouriteItem} cssClass={cssClass} /> </span>
                   
             </div>               
@@ -73,8 +73,8 @@ const ProductCard = ({product, isShopPage = false}) => {
               </span>
               <span className='pro-price'>
                 <div className='price-span'>
-                  <span className='new-price'>${product.newPrice}</span>
-                  <span className='old-price'>${product.oldPrice}</span>
+                  <span className='new-price'>${product.discountPrice}</span>
+                  <span className='old-price'>${product.price}</span>
                 </div>
                 <div className='add-cart'>
                     <a className="btn-1 add-cart" href="/">

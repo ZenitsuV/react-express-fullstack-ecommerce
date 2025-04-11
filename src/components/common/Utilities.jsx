@@ -40,4 +40,13 @@ export const getUserWishlist = () => {
   return filteredByUser;
 }
 
- 
+ export const getCurrentDate = () => {
+  let now = new Date();
+  let month = now.getMonth() + 1;
+  let year = now.getFullYear();
+  let day = now.getDate();
+  //return `${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}/${year}`;
+  return `${year}/${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}`;
+ } 
+
+

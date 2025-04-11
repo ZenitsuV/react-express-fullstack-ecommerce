@@ -55,6 +55,13 @@
     border-radius: 5px;
 }
 
+.register-wrapper .register-container .register-form 
+ {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+ }
+
 .register-wrapper .register-container .register-form form {
     display: -webkit-box;
     display: -ms-flexbox;

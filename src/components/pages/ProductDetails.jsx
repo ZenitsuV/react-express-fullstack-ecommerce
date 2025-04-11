@@ -23,7 +23,7 @@ const ProductDetails = () => {
             <div className='container'>
                 <div className='wrapper'>
                    <div className='prod-image'>
-                     <img src={product.url} />
+                     <img src={product.images} />
                    </div>
                    <div className='single-prod-desc'>
                      <div className='single-prod-content'>
@@ -31,12 +31,12 @@ const ProductDetails = () => {
                         <div className='single-price-stock'>
                             <div className='single-price'>
                                 <div className='final-price'>
-                                   {`₹${Number(product.newPrice).toFixed(2)}`}
-                                    <span className='price-dis'>{product.discount}</span>
+                                   {`₹${Number(product.discountPrice).toFixed(2)}`}
+                                    <span className='price-dis'>{product.discountPercentage}</span>
                                 </div>
                                 <div className='mrp'>
                                   M.R.P. : 
-                                  <span>{`₹${Number(product.oldPrice).toFixed(2)}`}</span>
+                                  <span>{`₹${Number(product.price).toFixed(2)}`}</span>
                                 </div>
                             </div>
                             <div className='single-stock'>

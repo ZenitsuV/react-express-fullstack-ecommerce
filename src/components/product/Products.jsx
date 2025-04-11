@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Products.css';
 import ProductCard from './ProductCard';
 import ProductSwiper from '../layout/section/ProductSwiper';
-import products from '/public/products';
 import {handleSorting} from '../common/Utilities';
 
 const Products = ({isSwiperNeeded, category, count = 12, filterBy = "", isShopPage}) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+        try {
+            let response = await fetch('products.json');
+            let data = await response.json();
+            setProducts(data);
+         } catch(error) {
+           console.log(error);
+         }
+    }
+    fetchProducts();
+     
+  },[])
+
+
   category ??= "All";
   const filteredProducts =  category === 'All' ? products : products.filter((pro) => category.includes(pro.category));
 
