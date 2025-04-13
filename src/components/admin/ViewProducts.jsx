@@ -6,6 +6,8 @@ import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import {Icon} from '../common/Utilities';
 
+
+
 const ViewProducts = () => {
  const [products, setProducts] = useState([]);
  const[selectSort, setSelectSort] = useState(""); 
@@ -31,6 +33,10 @@ const ViewProducts = () => {
  let content = [];
 
   {products.map((product, index) => {
+    let editData = {
+        isEdit: true,
+        id:`${product.id}`,
+    }
     content.push(  
         <tr className="pro-gl-content" key={index}>
             <td><span>{index + 1}</span></td>
@@ -53,7 +59,7 @@ const ViewProducts = () => {
             <td>
                 <span className="tbl-btn">
                     <button className="btn-2" title="Edit" style={{padding: "0px 10px 0px 10px", height: "45px"}} >
-                        <Icon name="edit" style={{padding: "0px", background: "transparent", color: "#ffffff", fontSize: "25px"}} />
+                        <Link to='/EditProduct' state={editData}><Icon name="edit" style={{padding: "0px", background: "transparent", color: "#ffffff", fontSize: "25px"}} /></Link> 
                     </button>
 
                     <button

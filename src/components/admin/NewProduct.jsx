@@ -1,13 +1,21 @@
-import React, {useState} from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import {  Link, useLocation } from 'react-router-dom';
 import './NewProduct.css';
 import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import NewProductForm from '../admin/NewProductForm';
+import ProductEditForm from './ProductEditForm';
 
 const NewProduct = () => {
- 
+    const location = useLocation();
+    let  isEdit = false;
+    let id;
+    if(location.state) {
+        isEdit  = location.state.isEdit ?? false;
+        id  = location.state.id ?? null;
+    }
+
     return (
         <>
             <Header/>
@@ -15,7 +23,7 @@ const NewProduct = () => {
             <section className='register-section'>
                 <div className='container' style={{flexDirection: "column"}}>
                     <div className='section-title'>
-                        <h2 className='title'>Add New Product</h2>
+                        <h2 className='title'>{isEdit ? "Update Product" : "Add New Product"}</h2>
                         <p>Best place to buy and sell digital products.</p>
                     </div>
                     
@@ -40,7 +48,8 @@ const NewProduct = () => {
                                         <Link to="/ViewProducts">View</Link>
                                         </button>
                                     </div>
-                                    <NewProductForm />
+                                    {!isEdit && <NewProductForm/>}
+                                    {isEdit && <ProductEditForm id={id} />}
                                </div>
                             </div> 
                         </div>

@@ -15,6 +15,7 @@ import Login from './components/pages/Login';
 import NewProduct from './components/admin/NewProduct';
 import ViewProducts from './components/admin/ViewProducts';
 
+
 function App() {
   return (
       <Router>
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Login" element={<Login/>}></Route>
           <Route path="/ProductDetails/:productId" element={<ProductDetails/>}></Route>
           <Route path="/NewProduct" element={<NewProduct/>}></Route>
+          <Route path="/EditProduct" element={<NewProduct/>}></Route>
           <Route path="/ViewProducts" element={<ViewProducts/>}></Route>
           {/* <Route path="*" element={<NotFound/>}></Route> */}
         </Routes>
