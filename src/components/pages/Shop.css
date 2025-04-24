@@ -82,6 +82,7 @@
     overflow: hidden;
     border-radius: 0;
     border-left: 1px solid #eee;
+    align-items: center;
 }
 
 .select-inner span {

@@ -2,23 +2,24 @@
   {
     "id": "p1",
     "name": "Apple",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
     "discountPercentage": "-78%",
     "variations": [],
     "stock": 100,
-    "price": "12",
-    "discountPrice": "10",
+    "price": 12,
+    "discountPrice": 10,
     "rating": "2",
     "qtyperprice": "1",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/21_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/21_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p2",
     "name": "Dragon Fruit",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -29,12 +30,13 @@
     "discountPrice": 15,
     "rating": "4",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/22_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/22_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p3",
     "name": "Blue Berry",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -45,12 +47,13 @@
     "discountPrice": 11,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/23_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/23_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p4",
     "name": "Natural Hub Cherry Karonda",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -61,12 +64,13 @@
     "discountPrice": 49,
     "rating": "5",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/24_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/24_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p5",
     "name": "Mango",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -77,12 +81,13 @@
     "discountPrice": 50,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/28_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/28_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p6",
     "name": "Red Berry",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -93,12 +98,13 @@
     "discountPrice": 20,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/25_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/25_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p7",
     "name": "Orange",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -109,12 +115,13 @@
     "discountPrice": 2,
     "rating": "4",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/26_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/26_1.jpg",
+    "brand" : "b1"
   },
   {
     "id": "p8",
     "name": "Guava",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -125,12 +132,13 @@
     "discountPrice": 10,
     "rating": "5",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/27_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/27_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p9",
     "name": "Pineapple",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -141,12 +149,13 @@
     "discountPrice": 15,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/29_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/29_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p10",
     "name": "Banana",
-    "category": "Fruits",
+    "category": "c1",
     "subCategory": "Fresh Fruits",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -157,12 +166,13 @@
     "discountPrice": 10,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/30_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/30_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p11",
     "name": "Tomato",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -173,12 +183,13 @@
     "discountPrice": 5,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/11_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/11_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p12",
     "name": "Potato",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -189,12 +200,13 @@
     "discountPrice": 15,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/12_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/12_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p13",
     "name": "Onion",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -205,12 +217,13 @@
     "discountPrice": 25,
     "rating": "4",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/13_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/13_1.jpg",
+     "brand" : "b2"
   },
   {
     "id": "p14",
     "name": "Coriander Bunch",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -221,12 +234,13 @@
     "discountPrice": 5,
     "rating": "3",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/14_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/14_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p15",
     "name": "Capsicum",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -237,12 +251,13 @@
     "discountPrice": 2,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/15_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/15_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p16",
     "name": "Sweet Corn",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -253,12 +268,13 @@
     "discountPrice": 6,
     "rating": "5",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/16_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/16_1.jpg",
+     "brand" : "b2"
   },
   {
     "id": "p17",
     "name": "Ginger - Organic",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -269,12 +285,13 @@
     "discountPrice": 2,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/17_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/17_1.jpg",
+     "brand" : "b2"
   },
   {
     "id": "p18",
     "name": "Beetroot",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -285,12 +302,13 @@
     "discountPrice": 3,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/18_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/18_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p19",
     "name": "Brocolli",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -301,12 +319,13 @@
     "discountPrice": 10,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/19_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/19_1.jpg",
+    "brand" : "b2"
   },
   {
     "id": "p20",
     "name": "Ginger Pack",
-    "category": "Vegetables",
+    "category": "c2",
     "subCategory": "Vegetables",
     "title": "Potato Chips 52g, American Cream & Onion Flavour, Crunchy Chips & Snacks.",
     "description": "",
@@ -317,6 +336,7 @@
     "discountPrice": 10,
     "rating": "2",
     "qtyperprice": "",
-    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/17_1.jpg"
+    "images": "https://grabit-react-next.maraviyainfotech.com/assets/img/product-images/17_1.jpg",
+    "brand" : "b2"
   }
 ]

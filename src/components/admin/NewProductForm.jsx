@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {getCurrentDate} from '../common/Utilities';
 
-const RegistrationForm = () => {
+const NewProductForm = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
        productName: '',
@@ -20,7 +20,21 @@ const RegistrationForm = () => {
     })
     const [errors, setErrors] = useState({});
     const [selectedImage, setSelectedImage] = useState(null);
-     
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      const fetchCategories = async () => {
+          try {
+              let response = await fetch('category.json');
+              let data = await response.json();
+              setCategories(data);
+           } catch(error) {
+             console.log(error);
+           }
+      }
+      fetchCategories();
+    },[])
+  
 
     const handleChange = (e) => {
        const {name, value, type} = e.target;
@@ -284,7 +298,7 @@ const RegistrationForm = () => {
                         />
                        
                     </label>
-                    {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
+                    {errors.image && <span className="error-message">{errors.image}</span>}
                 </div>
             </span>    
 
@@ -298,7 +312,7 @@ const RegistrationForm = () => {
                         id="select-brand"
                         onChange={handleChange}
                         >
-                        <option value="">Country</option>
+                        <option value="" disabled>--Select Brand--</option>
                         <option value="IN">India</option>      
                     </select>    
                 </div>
@@ -315,8 +329,11 @@ const RegistrationForm = () => {
                         id="select-category"
                         onChange={handleChange}
                         >
-                        <option value="">Region/State</option>
-                        <option value="TN">Tamil Nadu</option>      
+                        <option value="" disabled>--Select Category--</option>
+                        {categories.map((category) =>(
+                          <option value={category.id} key={category.id}>{category.name}</option>     
+                        ))}
+                         
                     </select>           
                 </div>       
                 {errors.category && <span className="error-message">{errors.category}</span>}   
@@ -332,7 +349,7 @@ const RegistrationForm = () => {
                         id="select-subCategory"
                         onChange={handleChange}
                         >
-                        <option value="">Region/State</option>
+                        <option value="" disabled>--Select Sub Category--</option>
                         <option value="TN">Tamil Nadu</option>      
                     </select>           
                 </div>       
@@ -349,9 +366,9 @@ const RegistrationForm = () => {
                         id="select-active"
                         onChange={handleChange}
                     >
-                        <option value="">Active</option>   
-                        <option value="true">Yes</option>      
-                        <option value="false">No</option>      
+                        <option value="" disabled>--Select Active--</option>
+                        <option value="true" key="true">Yes</option>      
+                        <option value="false" key="false">No</option>      
                     </select>               
                 </div>
                 {errors.active && <span className="error-message">{errors.active}</span>}
@@ -367,9 +384,9 @@ const RegistrationForm = () => {
                         id="select-tags"
                         onChange={handleChange}
                     >
-                        <option value="">Tags</option>   
-                        <option value="New">New</option>      
-                        <option value="Sale">Sale</option>      
+                        <option value="" disabled>--Select Tags--</option>   
+                        <option value="New" key="New">New</option>      
+                        <option value="Sale" key="Sale">Sale</option>      
                     </select>               
                 </div>
                 {errors.tags && <span className="error-message">{errors.tags}</span>}
@@ -383,4 +400,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default NewProductForm;

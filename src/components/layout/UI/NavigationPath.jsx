@@ -2,6 +2,7 @@ import React from 'react';
 import './NavigationPath.css';
 import { Link, useLocation } from 'react-router-dom';
 import ProductDetails from '../../pages/ProductDetails';
+import NewCategory from '../../admin/NewCategory';
 
 const NavigationPath = () => {
     const location = useLocation();
@@ -20,7 +21,18 @@ const NavigationPath = () => {
       register : "Register Page",
       Login : "Login Page",
       NewProduct: "New Product",
-      ViewProducts: "View Products"
+      ViewProducts: "View Products",
+      EditProduct: "Edit Product",
+      NewCategory: "New Category",
+      EditCategory: "Edit Category",
+      ViewCategories: "View Category",
+      NewSubCategory: "New Sub Category",
+      EditSubCategory: "Edit Sub Category",
+      ViewSubCategories: "View Sub Category",
+      NewBrand: "New Brand",
+      EditBrand: "Edit Brand",
+      ViewBrand:"ViewBrand"
+      
    }
   
   

@@ -4,6 +4,7 @@ import {getCurrentDate} from '../common/Utilities';
 
 const ProductEditForm = ({id}) => {
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
        productName: '',
@@ -21,7 +22,7 @@ const ProductEditForm = ({id}) => {
     })
     const [errors, setErrors] = useState({});
     const [selectedImage, setSelectedImage] = useState(null);
-     let isEdit = true;
+    let isEdit = true;
 
      useEffect(() => {      
         const fetchProducts = async () => {
@@ -32,10 +33,24 @@ const ProductEditForm = ({id}) => {
             } catch(error) {
             console.log(error);
             }
-        }
+        };
+        const fetchCategories = async () => {
+            try {
+                let response = await fetch('category.json');
+                let data = await response.json();
+                setCategories(data);
+             } catch(error) {
+               console.log(error);
+             }
+        };
+
         fetchProducts();
+        fetchCategories();
         
     },[])
+
+ 
+
 
     let data = products.filter((product) => product.id === id)[0];
 
@@ -344,8 +359,10 @@ const ProductEditForm = ({id}) => {
                         id="select-category"
                         onChange={handleChange}
                         >
-                        <option value="">Region/State</option>
-                        <option value="TN">Tamil Nadu</option>      
+                        <option value="" disabled>--Select Category--</option>
+                        {categories.map((category) =>(
+                          <option value={category.id} selected={data?.category === category.name}>{category.name}</option>     
+                        ))}
                     </select>           
                 </div>       
                 {errors.category && <span className="error-message">{errors.category}</span>}   
@@ -361,8 +378,10 @@ const ProductEditForm = ({id}) => {
                         id="select-subCategory"
                         onChange={handleChange}
                         >
-                        <option value="">Region/State</option>
-                        <option value="TN">Tamil Nadu</option>      
+                        <option value="" disabled>--Select Sub Category--</option>
+                        {categories.map((category) =>(
+                          <option value={category.id} selected={data?.category === category.name}>{category.name}</option>       
+                        ))}
                     </select>           
                 </div>       
                 {errors.subCategory && <span className="error-message">{errors.subCategory}</span>}   

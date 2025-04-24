@@ -1,8 +1,9 @@
+import React, {useEffect, useState} from 'react';
 import './CategorySwiper.css';
 import '@splidejs/react-splide/css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Icon } from '../../common/Utilities';
-import categories from '/public/category';
+
 
  const widthObj = {
      414 : '1',
@@ -25,8 +26,23 @@ const options = {
 
 
 const CategorySwiper = () => {
+  const [categories, setCategories] = useState([]);
 
-  console.log("Screen Width " + window.innerWidth);
+  useEffect(() => {
+    const fetchCategories = async () => {
+        try {
+            let response = await fetch('category.json');
+            let data = await response.json();
+            setCategories(data);
+         } catch(error) {
+           console.log(error);
+         }
+    }
+    fetchCategories();
+  },[])
+
+
+  console.log("CatSwiper Page Screen Width " + window.innerWidth);
 
   return (
     <>
@@ -40,7 +56,7 @@ const CategorySwiper = () => {
                     <div className="card" style={{backgroundColor:category.bgcolor}}>
                       <Icon name={category.icon} className="cat-icon" />
                       <div className='card-item'>
-                        <span className='card-item-title'>{category.text}</span>
+                        <span className='card-item-title'>{category.name}</span>
                         <span className='card-item-count'>{category.totalCount} Items</span>
                       </div>
                     

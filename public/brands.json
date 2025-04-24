@@ -1,0 +1,32 @@
+[
+    {
+        "id": "b1",
+        "name": "Brand 1",
+        "descroption": "",
+        "logo": "",
+        "website": "",
+        "isActive":"",
+        "createdAt": "",
+        "updatedAt":""  
+    },
+    {
+         "id": "b2",
+         "name": "Brand 2",
+         "descroption": "",
+         "logo": "",
+         "website": "",
+         "isActive":"",
+         "createdAt": "",
+         "updatedAt":""  
+     },
+     {
+         "id": "b3",
+         "name": "Brand 3",
+         "descroption": "",
+         "logo": "",
+         "website": "",
+         "isActive":"",
+         "createdAt": "",
+         "updatedAt":""  
+     }
+]
