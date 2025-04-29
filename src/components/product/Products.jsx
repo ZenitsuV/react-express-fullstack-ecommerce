@@ -3,23 +3,18 @@ import './Products.css';
 import ProductCard from './ProductCard';
 import ProductSwiper from '../layout/section/ProductSwiper';
 import {handleSorting} from '../common/Utilities';
+import useFetch from '../../hooks/useFetch';
 
 const Products = ({isSwiperNeeded, category, count = 12, filterBy = "", isShopPage}) => {
+  const getProducts = useFetch('products.json');
+  const getCategories = useFetch('category.json');
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-        try {
-            let response = await fetch('products.json');
-            let data = await response.json();
-            setProducts(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-    fetchProducts();
-     
-  },[])
+    setProducts(getProducts.data);
+    setCategories(getCategories.data);
+  },[getProducts.data])
 
 
   category ??= "All";

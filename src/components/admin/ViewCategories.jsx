@@ -5,34 +5,40 @@ import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import {Icon} from '../common/Utilities';
-
+import useFetch from '../../hooks/useFetch';
 
 
 const ViewCategories = () => {
+ const getCategories = useFetch('category.json');
  const [categories, setCategories] = useState([]);
- const[selectSort, setSelectSort] = useState(""); 
+ const [categoryFilter, setCategoryFilter] = useState("All");
 
   useEffect(() => {
-    const fetchCategories = async () => {
-        try {
-            let response = await fetch('category.json');
-            let data = await response.json();
-            setCategories(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-    fetchCategories();
-  },[])
+    setCategories(getCategories.data);
+  },[getCategories.data])
 
 
-  const handleSortDropdown = (e) => {
-    setSelectSort(e.target.value);
-  }
+  const handleCategoryChange = (e) => {
+    setCategoryFilter(e.target.value);
+  };
 
- let content = [];
+  const matchesCategory = (category, categoryFilter) => {
+    return (
+        categoryFilter === 'All' ||
+        category.name.toLowerCase() === categoryFilter.toLowerCase()
+    );
+  };
 
-  {categories.map((category, index) => {
+ 
+
+  const filteredCategories = categories?.filter(
+    (category) =>
+      matchesCategory(category, categoryFilter)
+  );
+
+
+  let content = [];
+  {filteredCategories?.map((category, index) => {
     let editData = {
         isEdit: true,
         id:`${category.id}`,
@@ -92,39 +98,23 @@ const ViewCategories = () => {
                             </button>
                             <h5>All Categories</h5>
                                   <div style={{display:"flex", gap:"15px"}}>
-                                      <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <input 
-                                                type="text" 
-                                                name="filter-search" 
-                                                id="filter_search"  
-                                                className='form-control'
-                                                style={{lineHeight:0, padding:"5px",height:"35px"}} 
-                                                placeholder='Search...'
-                                            />              
-                                        </div>
-
+                                
                                        <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <select name="sort-select" id="sort-select" onChange={handleSortDropdown}>
+                                            <select name="sort-select" id="sort-select" onChange={handleCategoryChange}>
                                                     <option value="" disabled="" >Category</option>
-                                                    <option value="1">Fruits</option>
-                                                    <option value="2">Vegetables</option>                                          
+                                                    <option value="All">All</option>
+                                                    {categories?.map((category) =>(
+                                                     <option value={category.name} key={category.id}>{category.name}</option>     
+                                                    ))}                                       
                                             </select>
                                             <Icon name="keyboard_arrow_down" />
-                                        </div>
-
-                                        <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <select name="sort-select" id="sort-select" onChange={handleSortDropdown}>
-                                                    <option value="" disabled="" >Brand</option>
-                                                    <option value="1">Fruits</option>
-                                                    <option value="2">Vegetables</option>                                          
-                                            </select>
-                                            <Icon name="keyboard_arrow_down" />
-                                        </div>      
+                                        </div>    
                                   </div>
                                   
                         </div>
                         <div className="card-body">
                             <div className="card-table">
+                            {filteredCategories?.length > 0 ? 
                             <table className="table table">
                                 <thead>
                                 <tr>
@@ -142,6 +132,9 @@ const ViewCategories = () => {
                                   {content}
                                 </tbody>
                             </table>
+                               : 
+                               <div style={{display:"flex", justifyContent:"center", color:"red"}}>No products available</div>
+                              }
                             </div>
                         </div>
                         </div>

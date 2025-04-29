@@ -5,35 +5,38 @@ import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import {Icon} from '../common/Utilities';
-
+import useFetch from '../../hooks/useFetch';
 
 
 const ViewBrands = () => {
+ const getBrands = useFetch('brands.json');
  const [brands, setBrands] = useState([]);
- const[selectSort, setSelectSort] = useState(""); 
+ const [searchTerm, setSearchTerm] = useState("");
+
 
   useEffect(() => {
-    const fetchBrands = async () => {
-        try {
-            let response = await fetch('brands.json');
-            let data = await response.json();
-            setBrands(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-    fetchBrands();
-  },[])
+    setBrands(getBrands.data);
+  },[getBrands.data])
 
 
-  const handleSortDropdown = (e) => {
-    setSelectSort(e.target.value);
-  }
+
+  const matchesSearchTerm = (brand, searchTerm) => {
+    return brand.name.toLowerCase().includes(searchTerm.toLocaleLowerCase());
+  };
+ 
+
+
+  const filteredBrands = brands?.filter(
+    (brand) =>
+      matchesSearchTerm(brand, searchTerm) 
+  );
+
+  
 
  let content = [];
   
-    if(brands.length > 0) {
-        brands.map((brand,index) => {
+    if(filteredBrands?.length > 0) {
+        filteredBrands.map((brand,index) => {
              
             let editData = {
                     isEdit: true,
@@ -65,7 +68,7 @@ const ViewBrands = () => {
         })
     }  else {
        content.push(<tr>
-           <td>No data available</td>
+           <td colSpan={7} style={{color:"red"}}>No data available</td>
        </tr>)
     }
 
@@ -104,19 +107,13 @@ const ViewBrands = () => {
                                                 name="filter-search" 
                                                 id="filter_search"  
                                                 className='form-control'
-                                                style={{lineHeight:0, padding:"5px",height:"35px"}} 
+                                                style={{lineHeight:0, padding:"5px",height:"35px",fontFamily: "inherit",fontSize: "15px"}} 
                                                 placeholder='Search...'
+                                                value={searchTerm}
+                                                onChange={(e) => setSearchTerm(e.target.value)}
                                             />              
                                         </div>
-
-                                       <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <select name="sort-select" id="sort-select" onChange={handleSortDropdown}>
-                                                    <option value="" disabled="" >Category</option>
-                                                    <option value="1">Fruits</option>
-                                                    <option value="2">Vegetables</option>                                          
-                                            </select>
-                                            <Icon name="keyboard_arrow_down" />
-                                        </div>     
+   
                                   </div>
                                   
                         </div>

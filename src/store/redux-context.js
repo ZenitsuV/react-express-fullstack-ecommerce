@@ -14,7 +14,7 @@ import authReducer from './auth';
 //const store = configureStore(rootReducer, applyMiddleware(thunk));
 
 const store = configureStore({
-  reducer: { auth: authReducer, favourite: favReducer },
+  reducer: { auth: authReducer, wishlist: favReducer },
 });
 
 

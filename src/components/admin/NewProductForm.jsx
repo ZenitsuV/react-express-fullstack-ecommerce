@@ -21,6 +21,8 @@ const NewProductForm = () => {
     const [errors, setErrors] = useState({});
     const [selectedImage, setSelectedImage] = useState(null);
     const [categories, setCategories] = useState([]);
+    const [subCategories, setSubCategories] = useState([]);
+    const [brands, setBrands] = useState([]);
 
     useEffect(() => {
       const fetchCategories = async () => {
@@ -32,13 +34,25 @@ const NewProductForm = () => {
              console.log(error);
            }
       }
-      fetchCategories();
+
+      const fetchBrands = async () => {
+        try {
+            let response = await fetch('brands.json');
+            let data = await response.json();
+            setBrands(data);
+         } catch(error) {
+           console.log(error);
+         }
+    }
+    fetchCategories();
+    fetchBrands();
+
     },[])
   
 
     const handleChange = (e) => {
        const {name, value, type} = e.target;
-       setFormData({
+        setFormData({
            ...formData,
            [name]:value
        });
@@ -51,6 +65,11 @@ const NewProductForm = () => {
           form: ''
         });
       }
+      
+      
+        let filteredCategory = categories.filter((category) => category.id === value)[0];
+        setSubCategories(filteredCategory.subCategory);
+      
 
     };
 
@@ -313,7 +332,9 @@ const NewProductForm = () => {
                         onChange={handleChange}
                         >
                         <option value="" disabled>--Select Brand--</option>
-                        <option value="IN">India</option>      
+                        {brands.map((brand) =>(
+                          <option value={brand.id} key={brand.id}>{brand.name}</option>     
+                        ))}  
                     </select>    
                 </div>
                 {errors.brand && <span className="error-message">{errors.brand}</span>}
@@ -329,7 +350,7 @@ const NewProductForm = () => {
                         id="select-category"
                         onChange={handleChange}
                         >
-                        <option value="" disabled>--Select Category--</option>
+                        <option value="">--Select Category--</option>
                         {categories.map((category) =>(
                           <option value={category.id} key={category.id}>{category.name}</option>     
                         ))}
@@ -350,7 +371,9 @@ const NewProductForm = () => {
                         onChange={handleChange}
                         >
                         <option value="" disabled>--Select Sub Category--</option>
-                        <option value="TN">Tamil Nadu</option>      
+                        {subCategories.map((subCategory) =>(
+                          <option value={subCategory} key={subCategory}>{subCategory}</option>     
+                        ))}  
                     </select>           
                 </div>       
                 {errors.subCategory && <span className="error-message">{errors.subCategory}</span>}   

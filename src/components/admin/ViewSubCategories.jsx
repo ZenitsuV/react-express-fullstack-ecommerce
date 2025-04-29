@@ -5,25 +5,19 @@ import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import {Icon} from '../common/Utilities';
+import useFetch from '../../hooks/useFetch';
 
 
 
 const ViewSubCategories = () => {
+ const { data, loading, error } = useFetch('category.json');
  const [categories, setCategories] = useState([]);
- const[selectSort, setSelectSort] = useState(""); 
+ const [selectSort, setSelectSort] = useState(""); 
+
 
   useEffect(() => {
-    const fetchCategories = async () => {
-        try {
-            let response = await fetch('category.json');
-            let data = await response.json();
-            setCategories(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-    fetchCategories();
-  },[])
+    setCategories(data);
+  },[data])
 
 
   const handleSortDropdown = (e) => {
@@ -32,7 +26,7 @@ const ViewSubCategories = () => {
 
  let content = [];
 
-  {categories.forEach((category, idx) => {
+  {categories?.forEach((category, idx) => {
    
     if(category.subCategory.length > 0) {
         category.subCategory.map((sub,index) => {
@@ -45,7 +39,7 @@ const ViewSubCategories = () => {
                 }
 
             content.push(  
-                <tr className="pro-gl-content" key={index}>
+                <tr className="pro-gl-content" key={index + 1}>
                     <td><span>{index + 1}</span></td>         
                     <td><span>{category.name}</span></td>
                     <td><span>{sub}</span></td>
@@ -65,7 +59,9 @@ const ViewSubCategories = () => {
                 );
         })
     } else {
-
+      <tr>
+        <td>No data available</td>
+      </tr>
     }
 
   })}  
@@ -121,19 +117,25 @@ const ViewSubCategories = () => {
                         </div>
                         <div className="card-body">
                             <div className="card-table">
-                            <table className="table table">
-                                <thead>
-                                <tr>
-                                    <th scope="col">S.No</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Sub Category</th>
-                                    <th scope="col">Actions</th>  
-                                </tr>
-                                </thead>
-                                <tbody className="wish-empt" style={{textAlign: "center"}}>
-                                  {content}
-                                </tbody>
-                            </table>
+                               {loading && <div>Loading....</div>}
+                               {error && <div>{error}</div>}
+                                {
+                                    !loading && 
+                                    <table className="table table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">S.No</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Sub Category</th>
+                                        <th scope="col">Actions</th>  
+                                    </tr>
+                                    </thead>
+                                    <tbody className="wish-empt" style={{textAlign: "center"}}>
+                                      {content}
+                                    </tbody>
+                                </table>
+                                }
+                           
                             </div>
                         </div>
                         </div>

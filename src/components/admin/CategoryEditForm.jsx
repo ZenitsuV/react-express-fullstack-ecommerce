@@ -195,7 +195,7 @@ const CategoryEditForm = ({id}) => {
             </span>
 
             
-            <span className="register-wrap register-half" style={{marginTop: "2px"}}>
+            <span className="register-wrap register-half" style={{marginTop: "11px"}}>
                 <label>Color</label>
                 <div>
                     <input

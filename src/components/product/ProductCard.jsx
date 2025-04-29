@@ -8,11 +8,11 @@ import { favActions } from '../../store/wishlist';
 const ProductCard = ({product, isShopPage = false}) => {
 
   const disPatch = useDispatch();
-  const favouriteItems = useSelector((state) => state.favourite.favouriteItems);
+  const favouriteItems = useSelector((state) => state.wishlist.favouriteItems);
 
   const isItemFavourite = (arr, id) => {
-    // if (items.length > 0) return arr[items].some((item) => item.productId === id);
-    //else return false;
+    if (arr.length > 0) return arr.some((item) => item.productId === id);
+    else return false;
   };
 
   const itemIsFavourite = isItemFavourite(favouriteItems, product.id);

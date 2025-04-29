@@ -5,65 +5,30 @@ import Header from '../layout/section/Header';
 import NavigationPath from '../layout/UI/NavigationPath';
 import Footer from '../layout/section/Footer';
 import {Icon} from '../common/Utilities';
-
+import useFetch from '../../hooks/useFetch';
+import Dropdown from '../layout/UI/Dropdown';
+import Input from '../layout/UI/Input';
 
 
 const ViewProducts = () => {
+ const getProducts = useFetch('products.json');
+ const getCategories = useFetch('category.json');
+ const getBrands = useFetch('brands.json');
  const [products, setProducts] = useState([]);
  const [categories, setCategories] = useState([]);
  const [brands, setBrands] = useState([]);
  const [searchTerm, setSearchTerm] = useState("");
  const [categoryFilter, setCategoryFilter] = useState("All");
  const [brandFilter, setBrandFilter] = useState("All");
- const [selectSort, setSelectSort] = useState(""); 
- const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
-    const fetchProducts = async () => {
-        //setLoading(true);
-        try {
-            let response = await fetch('products.json');
-            let data = await response.json();
-            setProducts(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-
-    const fetchCategories = async () => {
-        //setLoading(true);
-        try {
-            let response = await fetch('category.json');
-            let data = await response.json();
-            setCategories(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
-
-     const fetchBrands = async () => {
-        //setLoading(true);
-        try {
-            let response = await fetch('brands.json');
-            let data = await response.json();
-            setBrands(data);
-         } catch(error) {
-           console.log(error);
-         }
-    }
- 
-    fetchProducts();
-    fetchBrands();
-    fetchCategories();
-     
-  },[])
+    setProducts(getProducts.data);
+    setCategories(getCategories.data);
+    setBrands(getBrands.data);
+  },[getProducts.data])
 
   
-
-  const handleSortDropdown = (e) => {
-    setSelectSort(e.target.value);
-  }
-
   const handleCategoryChange = (e) => {
     setCategoryFilter(e.target.value);
   };
@@ -71,6 +36,10 @@ const ViewProducts = () => {
   const handleBrandChange = (e) => {
     setBrandFilter(e.target.value);
   };
+
+  const handleSearch = (e) => {
+     setSearchTerm(e.target.value);
+  }
 
   const matchesCategory = (product, categoryFilter) => {
     return (
@@ -91,16 +60,15 @@ const ViewProducts = () => {
   };
 
 
-  const filteredProducts = products.filter(
+  const filteredProducts = products?.filter(
     (product) =>
       matchesCategory(product, categoryFilter) &&
       matchesBrand(product, brandFilter) &&
       matchesSearchTerm(product, searchTerm) 
-
   );
 
   let content = [];
-    if(filteredProducts.length > 0) {
+    if(filteredProducts?.length > 0) {
      {filteredProducts.map((product, index) => {
         let editData = {
             isEdit: true,
@@ -120,8 +88,8 @@ const ViewProducts = () => {
                 />
                 </td>
                 <td><span>{product.name}</span></td>
-                <td><span>{category.name}</span></td>
-                <td><span>{brand.name}</span></td>
+                <td><span>{category?.name}</span></td>
+                <td><span>{brand?.name}</span></td>
                 <td><span>{product.discountPrice}</span></td>
                 <td><span>{product.price}</span></td>
                 <td><span>{product.discountPercentage}</span></td>
@@ -146,8 +114,8 @@ const ViewProducts = () => {
     })}  
     }
 
-    if(loading) {
-    content.push(<div>Loading...</div>);
+    if(getProducts.loading) {
+      content.push(<div>Loading...</div>);
     }
 
 
@@ -177,46 +145,22 @@ const ViewProducts = () => {
                             </button>
                             <h5>All Products</h5>
                                   <div style={{display:"flex", gap:"15px"}}>
-                                      <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <input 
-                                                type="text" 
-                                                name="filter-search" 
-                                                id="filter_search"  
-                                                className='form-control'
-                                                style={{lineHeight:0, padding:"5px",height:"35px"}} 
-                                                placeholder='Search...'
-                                                value={searchTerm}
-                                                onChange={(e) => setSearchTerm(e.target.value)}
-                                            />              
-                                        </div>
-
-                                       <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <select name="sort-select" id="sort-select" onChange={handleCategoryChange}>
-                                                    <option value="" disabled="" >Category</option>
-                                                    <option value="All">All</option>
-                                                    {categories.map((category) =>(
-                                                    <option value={category.id} key={category.id}>{category.name}</option>     
-                                                    ))}                                 
-                                            </select>
-                                            <Icon name="keyboard_arrow_down" />
+                                        <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>                                       
+                                            <Input type="text" id="filter_search" placeholder="Search..."  value={searchTerm} onChange={handleSearch}/>
                                         </div>
 
                                         <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
-                                            <select name="sort-select" id="sort-select" onChange={handleBrandChange}>
-                                                    <option value="" disabled="" >Brand</option>
-                                                     <option value="All">All</option>
-                                                    {brands.map((brand) =>(
-                                                    <option value={brand.id} key={brand.id}>{brand.name}</option>     
-                                                    ))}                                          
-                                            </select>
-                                            <Icon name="keyboard_arrow_down" />
-                                        </div>      
+                                          <Dropdown url='category.json' handleChange={handleCategoryChange} />    
+                                        </div>
+                                        <div className='select-inner' style={{border: "1px solid #eee",height:"35px"}}>
+                                          <Dropdown url='brands.json' handleChange={handleBrandChange} />       
+                                        </div>
                                   </div>
                                   
                         </div>
                         <div className="card-body">
                             <div className="card-table">
-                                {filteredProducts.length > 0 ? 
+                                {filteredProducts?.length > 0 ? 
                                 <table className="table table">
                                     <thead>
                                     <tr>

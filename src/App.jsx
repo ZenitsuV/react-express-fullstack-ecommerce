@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/pages/Home';
 import ProductDetails from './components/pages/ProductDetails';
 import Shop from './components/pages/Shop';
@@ -41,26 +41,26 @@ function App() {
           {/* admin routes */}
 
            {/* Product */}
-            <Route path="/NewProduct" element={<NewProduct/>}></Route>
-            <Route path="/EditProduct" element={<NewProduct/>}></Route>
-            <Route path="/ViewProducts" element={<ViewProducts/>}></Route>
+            <Route path="NewProduct" element={<NewProduct/>}></Route>
+            <Route path="EditProduct" element={<NewProduct/>}></Route>
+            <Route path="ViewProducts" element={<ViewProducts/>}></Route>
 
             {/* Category */}
-            <Route path="/NewCategory" element={<NewCategory/>}></Route>
-            <Route path="/EditCategory" element={<NewCategory/>}></Route>
-            <Route path="/ViewCategories" element={<ViewCategories/>}></Route>
+            <Route path="NewCategory" element={<NewCategory/>}></Route>
+            <Route path="EditCategory" element={<NewCategory/>}></Route>
+            <Route path="ViewCategories" element={<ViewCategories/>}></Route>
 
             {/* Sub Category */}
-            <Route path="/NewSubCategory" element={<NewSubCategory/>}></Route>
-            <Route path="/EditSubCategory" element={<NewSubCategory/>}></Route>
-            <Route path="/ViewSubCategories" element={<ViewSubCategories/>}></Route>
+            <Route path="NewSubCategory" element={<NewSubCategory/>}></Route>
+            <Route path="EditSubCategory" element={<NewSubCategory/>}></Route>
+            <Route path="ViewSubCategories" element={<ViewSubCategories/>}></Route>
 
              {/* Brand */}
-             <Route path="/NewBrand" element={<NewBrand/>}></Route>
-             <Route path="/EditBrand" element={<NewBrand/>}></Route>
-             <Route path="/ViewBrands" element={<ViewBrands/>}></Route>
+             <Route path="NewBrand" element={<NewBrand/>}></Route>
+             <Route path="EditBrand" element={<NewBrand/>}></Route>
+             <Route path="ViewBrands" element={<ViewBrands/>}></Route>
 
-          {/* <Route path="*" element={<NotFound/>}></Route> */}
+            <Route path="*" element={<Navigate to="/" />}></Route>
         </Routes>
    </Router>
   );
